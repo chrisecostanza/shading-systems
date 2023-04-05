@@ -1,0 +1,47 @@
+/*! purgecss start ignore */
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: $body-font;
+  font-size: 20px;
+  line-height: 1.6;
+  // color: $black;
+}
+
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  // @include media-breakpoint-up(md) {
+  //   padding: 0 10px;
+  // }
+}
+
+.thin-container {
+  margin: 0 auto;
+  max-width: 1070px;
+}
+
+.very-thin-container {
+  margin: 0 auto;
+  max-width: 870px;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// @include media-breakpoint-down(md) {
+//   .row > div {
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
+// }
+
+/*! purgecss end ignore */
