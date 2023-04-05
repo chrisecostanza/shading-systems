@@ -2909,7 +2909,7 @@
     "@roots/entrypoints-webpack-plugin" "6.12.0"
     tslib "2.5.0"
 
-"@roots/bud-eslint@^6.8.0":
+"@roots/bud-eslint@^6.12.0":
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/@roots/bud-eslint/-/bud-eslint-6.12.0.tgz#a1c2de76c7e51f8f744e1d77b0b3061a1f1ed997"
   integrity sha512-HQ4aZQQmeRToLbsaPMS/ahhRglWYuF2WRIy0u4fEm8BauM3UGv0GuIPdjvrIUFp5UTcOkcmItJkIKEeiWUfCQw==
@@ -2956,7 +2956,7 @@
     "@roots/bud-support" "6.12.0"
     tslib "2.5.0"
 
-"@roots/bud-postcss@6.12.0", "@roots/bud-postcss@^6.8.0":
+"@roots/bud-postcss@6.12.0", "@roots/bud-postcss@^6.12.0":
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/@roots/bud-postcss/-/bud-postcss-6.12.0.tgz#ef927bf601b1f97387615dbbfe50423e6afe81c7"
   integrity sha512-Xa0f6SQSybXwfO2i5Rrg0I6g5ZBnMwueUz8H4bQrJDeRh3UArSK8nuTjrApwN5knybu/rRTAXoCRH0kfErNNHg==
@@ -2998,7 +2998,7 @@
     "@roots/wordpress-hmr" "6.12.0"
     tslib "2.5.0"
 
-"@roots/bud-prettier@^6.8.0":
+"@roots/bud-prettier@^6.12.0":
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/@roots/bud-prettier/-/bud-prettier-6.12.0.tgz#52947b8d7ca7253d2ea5d926ba0a081776c5374c"
   integrity sha512-VcO9IzTxDJ00eAoieyYCDIoTjCEV9WgJh+aswda/+I/deOKeJcZjD2bL7nuXW0e6oAHNoHRdZtypJTxM7I1gRQ==
@@ -3008,7 +3008,7 @@
     prettier "2.8.7"
     tslib "2.5.0"
 
-"@roots/bud-purgecss@^6.8.0":
+"@roots/bud-purgecss@^6.12.0":
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/@roots/bud-purgecss/-/bud-purgecss-6.12.0.tgz#eba53522381eada4a6b71808e09e35e55faf809a"
   integrity sha512-RLgEaDx3uILzh3U6y5hNHU1NcghFkgs3cd1MWTExnarKIVZRZCMrEiSX2KX743gbTNlJceNZ31G0UQrLz8EVZQ==
@@ -3033,7 +3033,7 @@
     tslib "2.5.0"
     webpack "5.76.3"
 
-"@roots/bud-sass@^6.8.0":
+"@roots/bud-sass@^6.12.0":
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/@roots/bud-sass/-/bud-sass-6.12.0.tgz#f3edb245a97ae9ae3cb38436ead7333b2bcfd244"
   integrity sha512-EXzPg9wyp6jEaNKB5T3PIq9gdWGEbINqngFI0fiKHJi6IE5ojU4olmVaY2pwZK9CXtfpN1ClHZtAFmeL5mhOKw==
@@ -3057,7 +3057,7 @@
     "@roots/bud-support" "6.12.0"
     tslib "2.5.0"
 
-"@roots/bud-stylelint@^6.8.0":
+"@roots/bud-stylelint@^6.12.0":
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/@roots/bud-stylelint/-/bud-stylelint-6.12.0.tgz#84de8d19386e72b2e8a2e8f4c8907804c9112e9b"
   integrity sha512-sSyoCrClndgK/x8uLsgxSoxAnlhMWAjdT7wPlSPwVs/pgDCk8T0nv5DJQYVk4P5joBbE1To1nLHmAIhfD/lWUA==
@@ -3200,7 +3200,7 @@
     "@roots/wordpress-theme-json-webpack-plugin" "6.12.0"
     tslib "2.5.0"
 
-"@roots/bud@6.12.0", "@roots/bud@^6.8.0":
+"@roots/bud@6.12.0", "@roots/bud@^6.12.0":
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/@roots/bud/-/bud-6.12.0.tgz#435bfecec766fe73266cd54605f5b43c4c77263e"
   integrity sha512-XH3a9+lHR2tkdZKH8P8SHt7tjskBUht6mwOVzp2wAdDgtHj3sDV8JD/ZkqfyWSdBImMbkRLac9E6046Y2F+g3Q==
@@ -3245,7 +3245,7 @@
     tslib "2.5.0"
     webpack "5.76.3"
 
-"@roots/eslint-config@^6.8.0":
+"@roots/eslint-config@^6.12.0":
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/@roots/eslint-config/-/eslint-config-6.12.0.tgz#e7f5189b0fd388575eeacd11e7ca551c8f7d5dda"
   integrity sha512-xZAUkidzUSkxrFjQqDgkVzyt+2RrtgQxPDnAtKm+78QgTSDrlgh7a8xVx4Nq/vfDvkyKMV873ogyCO0rC4Jvog==
@@ -3290,7 +3290,7 @@
     tslib "2.5.0"
     webpack "5.76.3"
 
-"@roots/sage@^6.8.0":
+"@roots/sage@^6.12.0":
   version "6.12.0"
   resolved "https://registry.yarnpkg.com/@roots/sage/-/sage-6.12.0.tgz#d07acd388ac8c4e360f4cea0816b849b8acb91a0"
   integrity sha512-btvstUvGqS3eK/9t5JgVgQ/7vKG6rfWgPqGf03t2ZYVxK9b0Ks3Mbr5ujNWt02NrdfRWSKXBMR/+uaMOxtkzog==

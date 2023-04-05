@@ -33,6 +33,11 @@ export default async (app) => {
       safelist: [...purgeCssWordPress.safelist],
     })
 
+    .tap(bud => {
+      const options = bud.build.items.postcss.options(app);
+      options.postcssOptions.syntax = 'postcss-scss';
+    }) 
+
     /**
      * Directory contents to be included in the compilation
      * @see {@link https://bud.js.org/docs/bud.assets/}
@@ -43,8 +48,7 @@ export default async (app) => {
      * Matched files trigger a page reload when modified
      * @see {@link https://bud.js.org/docs/bud.watch/}
      */
-    // .watch(['resources/views', 'resources/styles', 'app'])
-    .watch('resources/views/**/*', 'app/**/*')
+    .watch(['resources/views', 'resources/styles', 'app'])
 
     /**
      * Proxy origin (`WP_HOME`)
