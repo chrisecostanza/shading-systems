@@ -81,8 +81,71 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
     acf_add_options_sub_page(array(
+		'page_title' 	=> 'Header Settings',
+		'menu_title'	=> 'Header Settings',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Location Dropdown',
+		'menu_title'	=> 'Location Dropdown',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'CTA Contact Form',
+		'menu_title'	=> 'CTA Contact Form',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+    acf_add_options_sub_page(array(
 		'page_title' 	=> 'Footer Settings',
 		'menu_title'	=> 'Footer Settings',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 }
+
+// New Custom Post Types
+// Team Members CPT
+function register_cpt_team_members() {
+
+    $labels = array(
+      'name' => _x( 'Team Members', 'team-members' ),
+      'singular_name' => _x( 'Team Member', 'team-members' ),
+      'add_new' => _x( 'Add Team Member', 'team-members' ),
+      'add_new_item' => _x( 'Add New Team Member', 'team-members' ),
+      'edit_item' => _x( 'Edit Team Member', 'team-members' ),
+      'new_item' => _x( 'New Team Member', 'team-members' ),
+      'view_item' => _x( 'View Team Member', 'team-members' ),
+      'search_items' => _x( 'Search Team Members', 'team-members' ),
+      'not_found' => _x( 'No Team Members found', 'team-members' ),
+      'not_found_in_trash' => _x( 'No Team Members found in Trash', 'team-members' ),
+      'parent_item_colon' => _x( 'Parent Team Member:', 'team-members' ),
+      'menu_name' => _x( 'Team Members', 'team-members' ),
+    );
+  
+    $args = array(
+      'labels' => $labels,
+      'hierarchical' => false,
+      'description' => 'This post type will be used to house the Team Members.',
+      'supports' => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes' ),
+      'taxonomies' => array( 'page-attributes' ),
+      'public' => true,
+      'show_ui' => true,
+      'show_in_menu' => true,
+      'menu_position' => 20,
+      'show_in_nav_menus' => true,
+      'publicly_queryable' => true,
+      'exclude_from_search' => false,
+      'has_archive' => true,
+      'query_var' => true,
+      'can_export' => true,
+      'rewrite'  => array('slug' => 'team'),
+      'capability_type' => 'post',
+      'menu_icon'=> 'dashicons-nametag'
+    );
+  
+    register_post_type( 'team-members', $args );
+  }
+  
+  add_action( 'init', 'register_cpt_team_members' );

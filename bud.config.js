@@ -15,16 +15,8 @@ export default async (app) => {
    * @see {@link https://bud.js.org/docs/bud.entry/}
    */
   app
-    /**
-       * Treat bootstrap as source modules
-       */
-    .compilePaths([
-      app.path(`resources`),
-      app.path(`node_modules/bootstrap`),
-    ])
-
     .entry({
-      app: ['@styles/_bootstrap.scss', '@scripts/app', '@styles/app.scss'],
+      app: ['@scripts/app', '@styles/app'],
       editor: ['@scripts/editor', '@styles/editor'],
     })
 
@@ -33,10 +25,15 @@ export default async (app) => {
       safelist: [...purgeCssWordPress.safelist],
     })
 
-    .tap(bud => {
-      const options = bud.build.items.postcss.options(app);
-      options.postcssOptions.syntax = 'postcss-scss';
-    }) 
+    .tap(bud =>
+      bud.sass.importGlobal([
+        '@styles/variables',
+        '@styles/bootstrap',
+        '@styles/global',
+        '@styles/header',
+        '@styles/footer',
+        '@styles/home',
+      ]))
 
     /**
      * Directory contents to be included in the compilation
@@ -67,6 +64,10 @@ export default async (app) => {
      * @see {@link https://bud.js.org/docs/bud.setPublicPath/}
      */
     .setPublicPath('/wp-content/themes/hill-hear-better/public/')
+
+    .provide({
+      jquery: ["jQuery", "$"],
+    })
 
     /**
      * Generate WordPress `theme.json`

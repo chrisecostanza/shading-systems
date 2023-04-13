@@ -1,0 +1,364 @@
+/*! purgecss start ignore */
+header {
+  background-color: $white;
+  padding: 10px 20px;
+  box-shadow: 0 3px 4px 0 $black-shadow;
+
+  @media (min-width: 768px) {
+    padding-top: 14px 40px;
+  }
+}
+
+.sticky-time {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  height: auto;
+  padding: 0;
+
+  @media (min-width: 992px) {
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  @media (min-width: 992px) {
+    .navbar-right {
+        display: block !important;
+        text-align: right;
+    }
+  }
+
+  .nav-utility-container {
+    display: none;
+
+    @media (min-width: 992px) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 35px;
+      margin-bottom: 15px;
+    }
+
+    .nav-phone-link {
+      line-height: 1;
+      font-size: 15px;
+      font-weight: $weight-bold;
+      color: $dark-blue;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (min-width: 768px) {
+      .nav-phone-link {
+        font-size: 18px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    #navbarToggler {
+      justify-content: flex-end;
+    }
+  }
+
+  .navbar-nav {
+    gap: 24px;
+
+    .nav-link {
+      padding: 0;
+      color: $dark-blue;
+      line-height: 1;
+      font-size: 18px;
+      font-weight: $weight-bold;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      @media (min-width: 992px) {
+        font-size: 16px;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 17px;
+      }
+
+      @media (min-width: 1075px) {
+        font-size: 18px;
+      }
+  
+      &:hover {
+        color: $blue;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+    }
+
+    .nav-item.dropdown {
+      position: relative;
+    }
+
+    .nav-item:last-child .dropdown-menu {
+      right: 0;
+      left: unset;
+    }
+
+    .dropdown-menu {
+      background-color: $dark-blue;
+      border: 1px solid $dark-blue;
+      border-radius: 0;
+      left: -15px;
+      width: 250px;
+      display: none;
+      position: absolute;
+      z-index: 1000;
+      top: 100%;
+      list-style: none;
+      padding: 15px;
+
+      &.show {
+        display: block !important;
+        text-align: left;
+      }
+
+      li {
+        line-height: 1;
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          white-space: normal;
+          margin-bottom: 0;
+          line-height: 1.1;
+          font-size: 18px;
+          font-weight: $weight-bold;
+          color: $white;
+          text-decoration: none;
+          padding: 0;
+  
+          &:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    .dropdown-toggle::after {
+      display: none;
+    }
+  }
+}
+
+.header-right-side {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 18px;
+}
+
+.cod-top-bar-mobile {
+  width: 100%;
+  margin-top: 15px;
+
+  .btn-red {
+    border: 1px solid $blue;
+    margin-bottom: 15px;
+  }
+
+  .header-phone {
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: $weight-semi-bold;
+    line-height: 1;
+    color: $blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .header-social {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+  }
+}
+
+.navbar-toggler {
+  padding: 0;
+  border: none;
+  background: none;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 20px;
+    height: 17px;
+    background: none;
+    border-radius: 0;
+
+    .bar {
+      width: 20px;
+      height: 3px;
+      background-color: $dark-blue;
+      margin: 0 0 5px;
+      border-radius: 1px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .modal {
+    display: none;
+  }
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#mobile-nav {
+  @media (max-width: 576px) {
+    .modal-dialog.modal-dialog-slideout {
+      width: 320px;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .modal-sm {
+      max-width: 320px;
+    }
+  }
+
+  .modal-dialog-slideout {
+    min-height: 100%;
+    margin: 0 auto 0 0;
+    background: $white;
+    border-left: 1px solid $dark-blue;
+  }
+
+  .modal-dialog.modal-dialog-slideout {
+    transform: translate(calc(100vw + 320px), 0);
+  }
+
+  &.show .modal-dialog.modal-dialog-slideout {
+    transform: translate(calc(100vw - 320px), 0);
+    flex-flow: column;
+  }
+
+  .modal-dialog-slideout .modal-content {
+    background-color: $white;
+    border-radius: 0;
+    border: none;
+  }
+
+  .modal-header {
+    border: none;
+    justify-content: flex-end;
+
+    .close {
+      appearance: none;
+      background: none;
+      border: none;
+    }
+  }
+
+  .modal-body {
+    padding: 0 20px 20px;
+    border-radius: 0;
+  }
+
+  .navbar-brand-mobile {
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .nav-mobile-container {
+    a {
+      color: $dark-blue;
+      font-size: 21px;
+      line-height: 1;
+      font-weight: $weight-bold;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &::after {
+        display: none;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        color: $dark-blue;
+      }
+    }
+
+    ul.dropdown-menu {
+      display: none;
+      list-style: none;
+      padding: 0;
+      background-color: $white;
+      position: relative !important;
+      transform: translate3d(-12px, -10px, 0) !important;
+      width: 100%;
+      border: none;
+      top: 10px !important;
+      left: 30px !important;
+
+      &.show {
+        display: block;
+      }
+
+      li {
+        margin-bottom: 0;
+
+        a {
+          padding-bottom: 0;
+        }
+      }
+
+      a {
+        font-size: 18px;
+        line-height: 1;
+        white-space: normal;
+        padding: 0 0 15px;
+        color: $blue;
+      }
+    }
+  }
+
+  .mobile-utility-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .mobile-social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+/*! purgecss end ignore */

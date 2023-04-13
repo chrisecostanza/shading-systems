@@ -1,0 +1,176 @@
+footer {
+  background-color: $light-gray;
+  padding-top: 40px;
+  padding-bottom: 20px;
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+      gap: 30px 96px;
+      text-align: left;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, auto);
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    h5 {
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .footer-col-1 {
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 300px;
+      }
+
+      img {
+        margin-bottom: 25px;
+      }
+
+      .footer-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+
+        @media (min-width: 768px) {
+          justify-content: flex-start;
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .footer-col-2 {
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 250px;
+      }
+
+      #mc_embed_signup {
+        #mc_embed_signup_scroll {
+          text-align: center;
+          line-height: 1;
+
+          @media (min-width: 768px) {
+            text-align: left;
+          }
+        }
+
+        label {
+          margin-bottom: 10px;
+          font-weight: $weight-bold;
+          font-size: 19px;
+          color: $blue;
+        }
+
+        input.form-control {
+          border: 1px solid $dark-blue;
+          border-radius: 2px;
+          background-color: $white;
+          height: 40px;
+          font-size: 16px;
+          color: $dark-blue;
+          width: 100%;
+          max-width: 245px;
+          margin: 0 auto 20px;
+
+          @media (min-width: 768px) {
+            margin: 0 0 20px;
+          }
+        }
+      }
+    }
+
+    .footer-col-3 {
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 180px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 12px;
+          line-height: 1;
+
+          a {
+            font-size: 19px;
+            line-height: 1;
+            font-weight: $weight-bold;
+            color: $blue;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+              text-underline-offset: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-col-4 {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 205px;
+      }
+
+      img {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .footer-copyright {
+    padding-top: 20px;
+
+    .copyright {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      column-gap: 30px;
+
+      @media (min-width: 768px) {
+        justify-content: space-between;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 0;
+
+        @media (min-width: 768px) {
+          text-align: left;
+        }
+      }
+
+      p,
+      a {
+        font-size: 15px;
+        color: $dark-blue;
+      }
+    }
+  }
+}
