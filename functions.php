@@ -92,6 +92,12 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'theme-general-settings',
 	));
 
+  acf_add_options_sub_page(array(
+		'page_title' 	=> 'Team Members Archive',
+		'menu_title'	=> 'Team Members Archive',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
     acf_add_options_sub_page(array(
 		'page_title' 	=> 'CTA Contact Form',
 		'menu_title'	=> 'CTA Contact Form',
@@ -149,3 +155,47 @@ function register_cpt_team_members() {
   }
   
   add_action( 'init', 'register_cpt_team_members' );
+
+// Office Locations CPT
+function register_cpt_offices() {
+
+    $labels = array(
+      'name' => _x( 'Offices', 'offices' ),
+      'singular_name' => _x( 'Office', 'offices' ),
+      'add_new' => _x( 'Add Office', 'offices' ),
+      'add_new_item' => _x( 'Add New Office', 'offices' ),
+      'edit_item' => _x( 'Edit Office', 'offices' ),
+      'new_item' => _x( 'New Office', 'offices' ),
+      'view_item' => _x( 'View Office', 'offices' ),
+      'search_items' => _x( 'Search Offices', 'offices' ),
+      'not_found' => _x( 'No Offices found', 'offices' ),
+      'not_found_in_trash' => _x( 'No Offices found in Trash', 'offices' ),
+      'parent_item_colon' => _x( 'Parent Office:', 'offices' ),
+      'menu_name' => _x( 'Offices', 'offices' ),
+    );
+  
+    $args = array(
+      'labels' => $labels,
+      'hierarchical' => false,
+      'description' => 'This post type will be used to house the Office Locations.',
+      'supports' => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes' ),
+      'taxonomies' => array( 'page-attributes' ),
+      'public' => true,
+      'show_ui' => true,
+      'show_in_menu' => true,
+      'menu_position' => 20,
+      'show_in_nav_menus' => true,
+      'publicly_queryable' => true,
+      'exclude_from_search' => false,
+      'has_archive' => false,
+      'query_var' => true,
+      'can_export' => true,
+      'rewrite'  => array('slug' => 'office'),
+      'capability_type' => 'post',
+      'menu_icon'=> 'dashicons-building'
+    );
+  
+    register_post_type( 'offices', $args );
+  }
+  
+  add_action( 'init', 'register_cpt_offices' );

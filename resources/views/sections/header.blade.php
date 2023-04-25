@@ -16,9 +16,9 @@
 
       <div id="navbarToggler" class="navbar-right collapse navbar-collapse">
         <div class="nav-utility-container">
-          <a href="/" class="btn btn-small">Take Our Tinnitus Quiz</a>
+          <a href="/tinnitus-quiz/" class="btn btn-small">Take Our Tinnitus Quiz</a>
           <a href="tel:{{ the_field('phone_number', 'options') }}" class="nav-phone-link">{{ the_field('phone_number', 'options') }}</a>
-          <a href="/" class="btn btn-small btn-dark-blue">Contact</a>
+          <a href="/contact/" class="btn btn-small btn-dark-blue">Contact</a>
         </div>
 
         @if (has_nav_menu('primary_navigation'))
@@ -64,9 +64,9 @@
 
         <div class="bottom-bar-mobile">
           <div class="mobile-utility-container">
-            <a href="tel:{{ the_field('footer_phone_number', 'options') }}" class="nav-phone-link">{{ the_field('footer_phone_number', 'options') }}513-613-4659</a>
-            <a href="/" class="btn btn-small btn-dark-blue">Contact</a>
-            <a href="/" class="btn btn-small">Take Our Tinnitus Quiz</a>
+            <a href="tel:{{ the_field('phone_number', 'options') }}" class="nav-phone-link">{{ the_field('phone_number', 'options') }}</a>
+            <a href="/contact/" class="btn btn-small btn-dark-blue">Contact</a>
+            <a href="/tinnitus-quiz/" class="btn btn-small">Take Our Tinnitus Quiz</a>
           </div>
           <div class="mobile-social">
             <a href="{{ the_field('facebook_url', 'option') }}" target="_blank" rel="noopener">

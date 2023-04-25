@@ -1,0 +1,83 @@
+#contact-page {
+  background-image: linear-gradient(to right, $white 0%, $white 50%, $dark-blue 50%, $dark-blue 100%);
+
+  .col-left {
+    padding: 65px 50px 65px 0;
+
+    h2,
+    h3 {
+      margin-bottom: 25px;
+    }
+
+    .contact-paragraph {
+      margin-bottom: 35px;
+    }
+
+    .office-contact-details {
+      margin-bottom: 35px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .office-address {
+        margin-bottom: 15px;
+        line-height: 1.3;
+      }
+  
+      .office-link {
+        font-weight: $weight-bold;
+      }
+    }
+  }
+
+  .col-right {
+    background-image: url("../images/soundwaves-single-blue.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: bottom center;
+    padding: 65px 0 155px 50px;
+
+    .contact-form-container {
+      .infusion-field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+        margin: 0 0 25px;
+        max-width: 550px;
+    
+        label {
+          color: $white;
+          font-size: 18px;
+          font-weight: $weight-bold;
+        }
+    
+        input[type="text"],
+        textarea {
+          width: 100%;
+          height: 40px;
+          border: 1px solid $blue;
+          border-radius: 2px;
+          background-color: $white;
+          font-size: 16px;
+          line-height: 1;
+          padding: 12px 10px;
+        }
+      }
+    
+      .form-textarea {
+        textarea {
+          height: 100px;
+        }
+      }
+    
+      .infusion-submit {
+        button:hover {
+          color: $white;
+          background-color: $blue;
+        }
+      }
+    }
+  }
+}

@@ -31,9 +31,13 @@ export default async (app) => {
         '@styles/bootstrap',
         '@styles/global',
         '@styles/header',
-        '@styles/footer',
         '@styles/home',
         '@styles/why-choose-us',
+        '@styles/offices',
+        '@styles/contact',
+        '@styles/team',
+        '@styles/reviews',
+        '@styles/footer',
       ]))
 
     /**
