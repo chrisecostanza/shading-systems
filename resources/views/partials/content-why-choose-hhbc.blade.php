@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-12 col-md-5 col-left">
-        <img src="@asset('images/why-choose-perfect-fit-photo.jpg')" alt="">
+        <img src="@asset('images/why-choose-perfect-fit-photo.jpg')" alt="Ryan Hill fitting hearing aid">
       </div>
       <div class="col-12 col-md-7 col-right">
         <div class="content-container">

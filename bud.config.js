@@ -37,6 +37,7 @@ export default async (app) => {
         '@styles/contact',
         '@styles/team',
         '@styles/reviews',
+        '@styles/resources',
         '@styles/footer',
       ]))
 

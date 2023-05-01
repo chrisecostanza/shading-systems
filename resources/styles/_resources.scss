@@ -1,0 +1,197 @@
+// For Physicians
+#physicians-paragraph,
+#patients-paragraph {
+  padding-top: 65px;
+  padding-bottom: 35px;
+}
+
+#hearing-care {
+  padding-bottom: 90px;
+
+  .col-left {
+    @media (min-width: 768px) {
+      padding-right: 0;
+    }
+
+    .content-container {
+      border: 1px solid $dark-blue;
+      border-radius: 2px;
+      padding: 30px 10px;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        padding: 30px;
+        text-align: left;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .col-right {
+    align-self: center;
+
+    @media (min-width: 768px) {
+      padding-left: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+#diagnostic-section {
+  background-color: $light-gray;
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+#partnering-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+
+  .col-left {
+    align-self: center;
+
+    @media (min-width: 768px) {
+      padding-right: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .col-right {
+    @media (min-width: 768px) {
+      padding-left: 0;
+    }
+
+    .content-container {
+      border: 1px solid $dark-blue;
+      background-color: $blue;
+      border-radius: 2px;
+      padding: 30px 10px;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        padding: 30px;
+        text-align: left;
+      }
+
+      h2,
+      p {
+        color: $white;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Patient Resources
+
+/*! purgecss start ignore */
+#patient-videos {
+  scroll-margin-top: 125px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: $light-gray;
+
+  .patient-video-list {
+    margin-bottom: 30px;
+
+    .nav-tabs {
+      list-style-type: disc;
+      border: none;
+      padding-left: 28px;
+
+      button {
+        font-size: 21px;
+        line-height: 1.1;
+        font-weight: $weight-bold;
+        color: $charcoal;
+        text-decoration: none;
+        text-transform: capitalize;
+        text-align: left;
+        border: none;
+        padding: 0 0 10px;
+        background-color: transparent;
+
+        &:hover {
+          color: $blue;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+
+        &.active {
+          color: $blue;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+      }
+    }
+  }
+
+  .patient-video-container {
+    max-width: 600px;
+    margin-top: 30px;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .tab-content > .tab-pane {
+    display: block;
+    margin-bottom: 50px;
+
+    @media (min-width: 768px) {
+      display: none;
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.fade {
+      opacity: 1;
+    }
+
+    &.active {
+      display: block !important;
+    }
+
+    .ratio {
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .video-time {
+      font-size: 17px;
+      line-height: 1;
+      font-weight: $weight-bold;
+      color: $blue;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*! purgecss end ignore */

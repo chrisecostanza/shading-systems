@@ -1,6 +1,12 @@
 // @import url("_variables.scss");
 // @import url("bootstrap");
 
+/*! purgecss start ignore */
+// @import url('../../node_modules/slick-carousel/slick/slick');
+// @import url('../../node_modules/slick-carousel/slick/slick-themes');
+
+/*! purgecss end ignore */
+
 /** Import theme styles */
 // @import url("_bootstrap.scss");
 // @import url("_global.scss");
