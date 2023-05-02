@@ -29,23 +29,22 @@ domReady(async () => {
     jQuery('.video-modal iframe').attr('src', '');
   });
 
-  // Patient Resources Slider
-  // jQuery('.patient-video-container').slick({
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   arrows: false,
-  //   fade: true,
-  //   asNavFor: '.slider-nav',
-  // });
+  // Page FAQ Accordion
+  var acc = document.getElementsByClassName('accordion');
+  var i;
 
-  // jQuery('.slider-nav').slick({
-  //   slidesToShow: 5,
-  //   slidesToScroll: 1,
-  //   asNavFor: '.patient-video-container',
-  //   dots: true,
-  //   centerMode: true,
-  //   focusOnSelect: true,
-  // });
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener('click', function () {
+      this.classList.toggle('active');
+      this.closest('.faq-item').classList.toggle('active');
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  }
 });
 
 /**

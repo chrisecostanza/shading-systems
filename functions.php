@@ -93,6 +93,12 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
   acf_add_options_sub_page(array(
+		'page_title' 	=> 'Blog Archive',
+		'menu_title'	=> 'Blog Archive',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+  acf_add_options_sub_page(array(
 		'page_title' 	=> 'Team Members Archive',
 		'menu_title'	=> 'Team Members Archive',
 		'parent_slug'	=> 'theme-general-settings',

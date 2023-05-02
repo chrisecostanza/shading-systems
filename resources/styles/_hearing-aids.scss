@@ -1,0 +1,132 @@
+#hearing-consultation {
+  padding-bottom: 90px;
+
+  .col-left {
+    align-self: center;
+    padding: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .col-right {
+    padding: 0;
+
+    .content-container {
+      border: 1px solid $dark-blue;
+      border-radius: 2px;
+      padding: 30px 10px;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        padding: 30px;
+        text-align: left;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+#hearing-aid-styles {
+  background-color: $light-gray;
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  .hearing-aid-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px 80px;
+
+    img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+    }
+  }
+}
+
+#performance-level {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  @media(min-width: 768px) {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .performance-container {
+    display: grid;
+    grid-template-columns: auto;
+
+    @media(min-width: 992px) {
+      grid-template-columns: repeat(12, 1fr);
+      align-items: center;
+    }
+
+    .content-container {
+      grid-row: 1;
+      grid-column: 1 / -1;
+      background-color: $blue;
+      border: 1px solid $dark-blue;
+      color: $white;
+      z-index: 2;
+      padding: 30px 10px;
+
+      @media(min-width: 992px) {
+        grid-column: 1 / 8;
+        max-width: 671px;
+        padding: 30px 40px 0 30px;
+      }
+
+      h2 {
+        color: $white;
+      }
+
+      p {
+        line-height: 1.25;
+      }
+    }
+
+    .photo-container {
+      grid-row: 2;
+      grid-column: 1 / -1;
+
+      @media(min-width: 992px) {
+        grid-row: 1;
+        grid-column: 6 / -1;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+#hearing-aid-manufacturers {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: $light-gray;
+
+  .manufacturers-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px 80px;
+
+    img {
+      max-width: 170px;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

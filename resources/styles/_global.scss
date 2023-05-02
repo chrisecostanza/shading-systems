@@ -142,9 +142,14 @@ ol {
   font-size: 20px;
   line-height: 1.6;
   margin-bottom: 30px;
+
+  li::marker {
+    color: $blue;
+  }
 }
 
-.btn {
+.btn,
+.btn-container a {
   padding: 12px 15px;
   font-weight: $weight-extra-bold;
   font-size: 19px;
@@ -294,6 +299,11 @@ ol {
   }
 }
 
+#opening-paragraph {
+  padding-top: 65px;
+  padding-bottom: 35px;
+}
+
 // Page section
 #page-section {
   max-width: 800px;
@@ -301,6 +311,11 @@ ol {
 
   .wp-block-image {
     margin-bottom: 30px;
+
+    &.aligncenter {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
@@ -309,10 +324,11 @@ ol {
   .form-two-col {
     display: flex;
     flex-direction: column;
-    gap: 20px 40px;
+    // gap: 20px 40px;
 
     @media (min-width: 640px) {
       flex-direction: row;
+      gap: 20px 40px;
     }
   }
 
@@ -407,19 +423,6 @@ ol {
         }
       }
     
-      // .form-textarea {
-      //   max-width: 100%;
-      //   margin: 0 auto 20px;
-
-      //   @media (min-width: 640px) {
-      //     max-width: 460px;
-      //   }
-    
-      //   textarea {
-      //     height: 100px;
-      //   }
-      // }
-    
       .infusion-submit {
         text-align: center;
       }
@@ -452,6 +455,87 @@ ol {
 
 .modal-body {
   padding: 0 40px 40px;
+}
+
+#page-faqs {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: $light-gray;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .faq-paragraph {
+    margin-bottom: 20px;
+  }
+
+  .faq-item {
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: $white;
+    border: 1px solid $charcoal;
+    border-radius: 2px;
+    text-align: left;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before,
+    &.active::before {
+      content: unset;
+    }
+
+    &.active {
+      margin-bottom: 25px;
+    }
+  }
+
+  h3.accordion {
+    color: $dark-blue;
+    cursor: pointer;
+    padding: 0 25px 0 0;
+    font-size: 25px;
+    font-weight: $weight-bold;
+    margin-bottom: 0;
+    display: block;
+    outline: none;
+    text-transform: capitalize;
+
+    &.active {
+      margin-bottom: 25px;
+
+      img {
+        // top: unset;
+        // bottom: 15px;
+        transform: rotate(180deg);
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 22px;
+      right: 25px;
+    }
+  }
+
+  .faq-panel {
+    color: $dark-blue;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+    @media (min-width: 768px) {
+      padding: 0 90px 0 0;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
 }
 
 /*! purgecss end ignore */

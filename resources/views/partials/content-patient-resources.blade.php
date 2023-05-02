@@ -1,9 +1,4 @@
-<div class="page-header">
-  @if ( get_field('page_title_bg') )
-    <img class="page-header-img" src={{ the_field('page_title_bg') }} alt="patient resources photo">
-  @endif
-  <h1>{!! $title !!}</h1>
-</div>
+@include('partials.page-header')
 
 <section id="patients-paragraph">
   <div class="container thin-container">

@@ -1,8 +1,4 @@
-{{-- <div class="page-header" style="background-image: url({{ the_field('page_title_bg') }});"> --}}
-<div class="page-header">
-  <img class="page-header-img" src={{ the_field('page_title_bg') }} alt="why choose us photo">
-  <h1>{!! $title !!}</h1>
-</div>
+@include('partials.page-header')
 
 <div id="perfect-fit">
   <div class="container">

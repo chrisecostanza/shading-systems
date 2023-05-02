@@ -38,6 +38,8 @@ export default async (app) => {
         '@styles/team',
         '@styles/reviews',
         '@styles/resources',
+        '@styles/blog',
+        '@styles/hearing-aids',
         '@styles/footer',
       ]))
 
