@@ -1,0 +1,78 @@
+#products-faqs {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: $light-gray;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .faq-paragraph {
+    margin-bottom: 20px;
+  }
+
+  .faq-item {
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: $white;
+    border: 1px solid $charcoal;
+    border-radius: 2px;
+    text-align: left;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before,
+    &.active::before {
+      content: unset;
+    }
+
+    &.active {
+      margin-bottom: 25px;
+    }
+  }
+
+  h3.accordion {
+    color: $blue;
+    cursor: pointer;
+    padding: 0 25px 0 0;
+    font-size: 25px;
+    font-weight: $weight-regular;
+    margin-bottom: 0;
+    display: block;
+    outline: none;
+    text-transform: capitalize;
+
+    &.active {
+      margin-bottom: 25px;
+
+      img {
+        transform: rotate(180deg);
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 22px;
+      right: 25px;
+    }
+  }
+
+  .faq-panel {
+    color: $blue;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+    @media (min-width: 768px) {
+      padding: 0 90px 0 0;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+}

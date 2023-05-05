@@ -46,8 +46,8 @@ header {
     .nav-phone-link {
       line-height: 1;
       font-size: 15px;
-      font-weight: $weight-bold;
-      color: $dark-blue;
+      font-weight: $weight-regular;
+      color: $blue;
       text-decoration: underline;
       text-underline-offset: 3px;
     }
@@ -74,10 +74,10 @@ header {
 
     .nav-link {
       padding: 0;
-      color: $dark-blue;
+      color: $blue;
       line-height: 1;
       font-size: 18px;
-      font-weight: $weight-bold;
+      font-weight: $weight-regular;
       position: relative;
       text-decoration: none;
       text-transform: uppercase;
@@ -111,8 +111,8 @@ header {
     }
 
     .dropdown-menu {
-      background-color: $dark-blue;
-      border: 1px solid $dark-blue;
+      background-color: $blue;
+      border: 1px solid $blue;
       border-radius: 0;
       left: -15px;
       width: 250px;
@@ -141,7 +141,7 @@ header {
           margin-bottom: 0;
           line-height: 1.1;
           font-size: 18px;
-          font-weight: $weight-bold;
+          font-weight: $weight-regular;
           color: $white;
           text-decoration: none;
           padding: 0;
@@ -180,7 +180,7 @@ header {
   .header-phone {
     margin-bottom: 15px;
     font-size: 22px;
-    font-weight: $weight-semi-bold;
+    font-weight: $weight-regular;
     line-height: 1;
     color: $blue;
 
@@ -207,16 +207,20 @@ header {
 
   .navbar-toggler-icon {
     width: 20px;
-    height: 17px;
+    height: 20px;
     background: none;
     border-radius: 0;
 
     .bar {
       width: 20px;
       height: 3px;
-      background-color: $dark-blue;
+      background-color: $blue;
       margin: 0 0 5px;
-      border-radius: 1px;
+      border-radius: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -249,7 +253,7 @@ header {
     min-height: 100%;
     margin: 0 auto 0 0;
     background: $white;
-    border-left: 1px solid $dark-blue;
+    border-left: 1px solid $blue;
   }
 
   .modal-dialog.modal-dialog-slideout {
@@ -290,10 +294,10 @@ header {
 
   .nav-mobile-container {
     a {
-      color: $dark-blue;
+      color: $blue;
       font-size: 21px;
       line-height: 1;
-      font-weight: $weight-bold;
+      font-weight: $weight-regular;
       text-transform: uppercase;
       text-decoration: none;
 
@@ -304,7 +308,7 @@ header {
       &:hover {
         text-decoration: underline;
         text-underline-offset: 3px;
-        color: $dark-blue;
+        color: $blue;
       }
     }
 
@@ -325,7 +329,7 @@ header {
       }
 
       li {
-        margin-bottom: 0;
+        margin-bottom: 10px;
 
         a {
           padding-bottom: 0;
@@ -347,6 +351,10 @@ header {
     flex-direction: column;
     gap: 10px;
     margin: 20px 0;
+
+    .nav-phone-link {
+      font-weight: $weight-regular;
+    }
   }
 
   .mobile-social {

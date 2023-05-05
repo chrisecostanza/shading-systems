@@ -86,27 +86,9 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'theme-general-settings',
 	));
 
-    acf_add_options_sub_page(array(
-		'page_title' 	=> 'Location Dropdown',
-		'menu_title'	=> 'Location Dropdown',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-
   acf_add_options_sub_page(array(
 		'page_title' 	=> 'Blog Archive',
 		'menu_title'	=> 'Blog Archive',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-
-  acf_add_options_sub_page(array(
-		'page_title' 	=> 'Team Members Archive',
-		'menu_title'	=> 'Team Members Archive',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-
-    acf_add_options_sub_page(array(
-		'page_title' 	=> 'CTA Contact Form',
-		'menu_title'	=> 'CTA Contact Form',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 
@@ -118,72 +100,28 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 // New Custom Post Types
-// Team Members CPT
-function register_cpt_team_members() {
+// Projects CPT
+function register_cpt_projects() {
 
     $labels = array(
-      'name' => _x( 'Team Members', 'team-members' ),
-      'singular_name' => _x( 'Team Member', 'team-members' ),
-      'add_new' => _x( 'Add Team Member', 'team-members' ),
-      'add_new_item' => _x( 'Add New Team Member', 'team-members' ),
-      'edit_item' => _x( 'Edit Team Member', 'team-members' ),
-      'new_item' => _x( 'New Team Member', 'team-members' ),
-      'view_item' => _x( 'View Team Member', 'team-members' ),
-      'search_items' => _x( 'Search Team Members', 'team-members' ),
-      'not_found' => _x( 'No Team Members found', 'team-members' ),
-      'not_found_in_trash' => _x( 'No Team Members found in Trash', 'team-members' ),
-      'parent_item_colon' => _x( 'Parent Team Member:', 'team-members' ),
-      'menu_name' => _x( 'Team Members', 'team-members' ),
+      'name' => _x( 'Projects', 'projects' ),
+      'singular_name' => _x( 'Project', 'projects' ),
+      'add_new' => _x( 'Add Project', 'projects' ),
+      'add_new_item' => _x( 'Add New Project', 'projects' ),
+      'edit_item' => _x( 'Edit Project', 'projects' ),
+      'new_item' => _x( 'New Project', 'projects' ),
+      'view_item' => _x( 'View Project', 'projects' ),
+      'search_items' => _x( 'Search Projects', 'projects' ),
+      'not_found' => _x( 'No Projects found', 'projects' ),
+      'not_found_in_trash' => _x( 'No Projects found in Trash', 'projects' ),
+      'parent_item_colon' => _x( 'Parent Project:', 'projects' ),
+      'menu_name' => _x( 'Projects', 'projects' ),
     );
   
     $args = array(
       'labels' => $labels,
       'hierarchical' => false,
-      'description' => 'This post type will be used to house the Team Members.',
-      'supports' => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes' ),
-      'taxonomies' => array( 'page-attributes' ),
-      'public' => true,
-      'show_ui' => true,
-      'show_in_menu' => true,
-      'menu_position' => 20,
-      'show_in_nav_menus' => true,
-      'publicly_queryable' => true,
-      'exclude_from_search' => false,
-      'has_archive' => true,
-      'query_var' => true,
-      'can_export' => true,
-      'rewrite'  => array('slug' => 'team'),
-      'capability_type' => 'post',
-      'menu_icon'=> 'dashicons-nametag'
-    );
-  
-    register_post_type( 'team-members', $args );
-  }
-  
-  add_action( 'init', 'register_cpt_team_members' );
-
-// Office Locations CPT
-function register_cpt_offices() {
-
-    $labels = array(
-      'name' => _x( 'Offices', 'offices' ),
-      'singular_name' => _x( 'Office', 'offices' ),
-      'add_new' => _x( 'Add Office', 'offices' ),
-      'add_new_item' => _x( 'Add New Office', 'offices' ),
-      'edit_item' => _x( 'Edit Office', 'offices' ),
-      'new_item' => _x( 'New Office', 'offices' ),
-      'view_item' => _x( 'View Office', 'offices' ),
-      'search_items' => _x( 'Search Offices', 'offices' ),
-      'not_found' => _x( 'No Offices found', 'offices' ),
-      'not_found_in_trash' => _x( 'No Offices found in Trash', 'offices' ),
-      'parent_item_colon' => _x( 'Parent Office:', 'offices' ),
-      'menu_name' => _x( 'Offices', 'offices' ),
-    );
-  
-    $args = array(
-      'labels' => $labels,
-      'hierarchical' => false,
-      'description' => 'This post type will be used to house the Office Locations.',
+      'description' => 'This post type will be used to house the Projects.',
       'supports' => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes' ),
       'taxonomies' => array( 'page-attributes' ),
       'public' => true,
@@ -196,12 +134,56 @@ function register_cpt_offices() {
       'has_archive' => false,
       'query_var' => true,
       'can_export' => true,
-      'rewrite'  => array('slug' => 'office'),
+      'rewrite'  => array('slug' => 'projects'),
       'capability_type' => 'post',
-      'menu_icon'=> 'dashicons-building'
+      'menu_icon'=> 'dashicons-hammer'
     );
   
-    register_post_type( 'offices', $args );
+    register_post_type( 'projects', $args );
   }
   
-  add_action( 'init', 'register_cpt_offices' );
+  add_action( 'init', 'register_cpt_projects' );
+
+// Products CPT
+function register_cpt_products() {
+
+  $labels = array(
+    'name' => _x( 'Products', 'products' ),
+    'singular_name' => _x( 'Product', 'products' ),
+    'add_new' => _x( 'Add Product', 'products' ),
+    'add_new_item' => _x( 'Add New Product', 'products' ),
+    'edit_item' => _x( 'Edit Product', 'products' ),
+    'new_item' => _x( 'New Product', 'products' ),
+    'view_item' => _x( 'View Product', 'products' ),
+    'search_items' => _x( 'Search Products', 'products' ),
+    'not_found' => _x( 'No Products found', 'products' ),
+    'not_found_in_trash' => _x( 'No Products found in Trash', 'products' ),
+    'parent_item_colon' => _x( 'Parent Product:', 'products' ),
+    'menu_name' => _x( 'Products', 'products' ),
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => false,
+    'description' => 'This post type will be used to house the Products.',
+    'supports' => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes' ),
+    'taxonomies' => array( 'page-attributes' ),
+    'public' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'menu_position' => 20,
+    'show_in_nav_menus' => true,
+    'publicly_queryable' => true,
+    'exclude_from_search' => false,
+    'has_archive' => false,
+    'query_var' => true,
+    'can_export' => true,
+    'rewrite'  => array('slug' => 'products'),
+    'capability_type' => 'post',
+    'menu_icon'=> 'dashicons-store'
+  );
+
+  register_post_type( 'products', $args );
+}
+
+add_action( 'init', 'register_cpt_products' );

@@ -2,8 +2,7 @@
 // Import Bootstrap
 import 'bootstrap';
 import domReady from '@roots/sage/client/dom-ready';
-// Import Slick
-import 'slick-carousel';
+
 /*! purgecss end ignore */
 
 /**
@@ -29,7 +28,7 @@ domReady(async () => {
     jQuery('.video-modal iframe').attr('src', '');
   });
 
-  // Page FAQ Accordion
+  // Product FAQ Accordion
   var acc = document.getElementsByClassName('accordion');
   var i;
 

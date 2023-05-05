@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="186" height="226" viewBox="0 0 186 226"><defs><polygon id="a" points="93 0 93 16.611 54.365 161.586 45.389 177.99 0 144.145 1 77.264 13.986 27.561 65 0"/></defs><g fill="none" fill-rule="evenodd"><text fill="#003052" font-family="NanumGothicBold, NanumGothic" font-size="23" font-weight="bold">
-                        <tspan x="24.149" y="222">Best - 8.7/10</tspan>
-                    </text><circle cx="93.391" cy="94" r="86.5" stroke="#19A4DB" stroke-width="11"/><g transform="translate(0 1.973)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><circle cx="93" cy="92" r="86.5" stroke="#3E3E3F" stroke-width="11" mask="url(#b)"/></g><rect width="2" height="16" x="93.391" fill="#F9F9F9"/><rect width="2" height="16" x="50.391" y="162" fill="#F9F9F9" transform="rotate(31 51.39 170)"/><text fill="#003052" font-family="NanumGothicBold, NanumGothic" font-size="45" font-weight="bold" letter-spacing="-3">
-                            <tspan x="45.556" y="112">87%</tspan>
-                        </text></g></svg>

@@ -32,14 +32,9 @@ export default async (app) => {
         '@styles/global',
         '@styles/header',
         '@styles/home',
-        '@styles/why-choose-us',
-        '@styles/offices',
+        '@styles/products',
         '@styles/contact',
-        '@styles/team',
-        '@styles/reviews',
-        '@styles/resources',
         '@styles/blog',
-        '@styles/hearing-aids',
         '@styles/footer',
       ]))
 
@@ -59,19 +54,19 @@ export default async (app) => {
      * Proxy origin (`WP_HOME`)
      * @see {@link https://bud.js.org/docs/bud.proxy/}
      */
-    .proxy('https://hill-hear-better.local')
+    .proxy('https://shading-systems.local')
 
     /**
      * Development origin
      * @see {@link https://bud.js.org/docs/bud.serve/}
      */
-    .serve('http://localhost:3007')
+    .serve('http://localhost:3008')
 
     /**
      * URI of the `public` directory
      * @see {@link https://bud.js.org/docs/bud.setPublicPath/}
      */
-    .setPublicPath('/wp-content/themes/hill-hear-better/public/')
+    .setPublicPath('/wp-content/themes/shading-systems/public/')
 
     .provide({
       jquery: ["jQuery", "$"],
