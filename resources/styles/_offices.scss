@@ -1,0 +1,50 @@
+.office-contact-content {
+  padding: 24px 90px 30px;
+  width: 100%;
+  max-width: 550px;
+  margin: 60px auto 0;
+  border: 1px solid $charcoal;
+  text-align: center;
+  background-color: $white;
+  z-index: 1;
+  position: relative;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .office-address {
+    margin-bottom: 15px;
+    line-height: 1.25;
+  }
+
+  .office-phone {
+    margin-bottom: 4px;
+    line-height: 1;
+
+    a {
+      color: $charcoal;
+    }
+  }
+
+  .office-notes {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+}
+
+#office-map-embed {
+  margin-top: -50px;
+  margin-bottom: 50px;
+
+  .map-container {
+    border: 1px solid $charcoal;
+    height: 382px;
+  }
+}
+
+

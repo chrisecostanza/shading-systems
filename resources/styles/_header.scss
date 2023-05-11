@@ -128,6 +128,11 @@ header {
       }
     }
 
+    .contact-menu .dropdown-menu {
+      width: 250px;
+      column-count: 1;
+    }
+
     .dropdown-toggle::after {
       display: none;
     }

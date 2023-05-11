@@ -34,6 +34,7 @@ export default async (app) => {
         '@styles/header',
         '@styles/home',
         '@styles/products',
+        '@styles/offices',
         '@styles/contact',
         '@styles/blog',
         '@styles/footer',
