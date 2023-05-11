@@ -1,1 +1,122 @@
+footer {
+  background-color: $charcoal;
+  color: $white;
 
+  .footer-logo {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+
+    img {
+      width: 100%;
+      max-width: 308px;
+      height: auto;
+    }
+  }
+
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    gap: 40px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      align-items: flex-start;
+      flex-flow: row wrap;
+      text-align: left;
+    }
+
+    @media (min-width: 992px) {
+      gap: 110px;
+    }
+
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3 {
+      h5 {
+        color: $white;
+        text-transform: capitalize;
+        font-weight: $weight-regular;
+        margin-bottom: 10px;
+      }
+    }
+
+    .footer-col-1 {
+      h5 {
+        color: $white;
+      }
+    }
+
+    .footer-col-2 {
+      text-align: center;
+      padding-top: 0;
+
+      @media (min-width: 768px) {
+        padding-top: 30px;
+      }
+
+      .footer-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .footer-col-3 {
+      h5 {
+        color: $white;
+      }
+    }
+
+    .office-address {
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .office-phone {
+      margin-bottom: 4px;
+      line-height: 1;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  .footer-copyright {
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+    .copyright {
+      font-size: 14px;
+      line-height: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      text-align: center;
+
+      @media (min-width: 992px) {
+        justify-content: space-between;
+        gap: 20px;
+        // text-align: left;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: $white;
+      }
+    }
+  }
+}

@@ -29,6 +29,7 @@ export default async (app) => {
       bud.sass.importGlobal([
         '@styles/variables',
         '@styles/bootstrap',
+        '@styles/slick',
         '@styles/global',
         '@styles/header',
         '@styles/home',

@@ -11,13 +11,13 @@
     {!! get_search_form(false) !!}
   @endif
 
-  <section id="product-archive-section">
+  <section id="project-archive-section">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="product-grid">
+          <div class="project-grid">
             @while(have_posts()) @php(the_post())
-              @includeFirst(['partials.content-' . get_post_type(), 'partials.content-products'])
+              @includeFirst(['partials.content-' . get_post_type(), 'partials.content-projects'])
             @endwhile
           </div>
         </div>

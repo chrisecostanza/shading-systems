@@ -103,12 +103,14 @@ a {
 
   &:hover {
     color: $blue;
+    cursor: pointer;
   }
 }
 
 p {
   line-height: 1.6;
   margin-bottom: 30px;
+  font-weight: $weight-light;
 }
 
 .p-large {
@@ -199,8 +201,7 @@ ol {
 
 // Page Title
 .page-header {
-  background-color: $white;
-  padding: 20px 0;
+  padding: 15px 0;
   text-align: center;
 
   h1 {
@@ -226,7 +227,7 @@ ol {
 
 // Modal Styling
 .modal-open .modal {
-  background-color: rgba(0 48 82 / 80%);
+  background-color: rgba(0 0 0 / 80%);
 }
 
 .modal-content {
@@ -257,6 +258,31 @@ ol {
   @media (min-width: 768px) {
     padding: 0 40px 40px;
   }
+}
+
+//Slick Carousel
+.slick-prev,
+.slick-next {
+  background-repeat: no-repeat;
+  background-size: 9px 20px;
+  width: 9px;
+  height: 20px;
+  z-index: 10;
+}
+
+.slick-prev {
+  background-image: url("../images/icon-black-arrow-left.svg");
+  left: -5px;
+}
+
+.slick-next {
+  background-image: url("../images/icon-black-arrow-right.svg");
+  right: -5px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  content: "";
 }
 
 /*! purgecss end ignore */
