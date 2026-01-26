@@ -35,7 +35,6 @@
     </div>
   </section>
 
-  {{-- {!! get_the_posts_navigation() !!} --}}
   <div class="pagination">
     <?php echo the_posts_pagination( array(
       'mid_size'  => 2,

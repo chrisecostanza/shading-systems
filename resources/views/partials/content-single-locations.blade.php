@@ -16,10 +16,12 @@
   <a href="/contact/" class="btn">Tell Us About Your Project</a>
 </div>
 
-<div id="office-map-embed">
-  <div class="container">
-    <div class="map-container">
-      {{ the_field('office_map_embed') }}
+@if ( get_field('office_map_embed') )
+  <div id="office-map-embed">
+    <div class="container">
+        <div class="map-container">
+          <?php echo get_field('office_map_embed'); ?>
+        </div>
     </div>
   </div>
-</div>
+@endif

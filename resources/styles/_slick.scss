@@ -1,19 +1,21 @@
 /*! purgecss start ignore */
 
 // Default Variables
-$slick-font-path: "./fonts/";
-$slick-font-family: "slick";
-$slick-loader-path: "./";
-$slick-arrow-color: $charcoal;
-$slick-dot-color: $black;
-$slick-dot-color-active: $slick-dot-color;
-$slick-prev-character: "\2190";
-$slick-next-character: "\2192";
-$slick-dot-character: "\2022";
-$slick-dot-size: 6px;
-$slick-opacity-default: 0.75;
-$slick-opacity-on-hover: 1;
-$slick-opacity-not-active: 0.25;
+:root {
+    --slick-font-path: "../fonts/";
+    --slick-font-family: "slick";
+    --slick-loader-path: "../images/";
+    --slick-arrow-color: var(--charcoal);
+    --slick-dot-color: var(--black);
+    --slick-dot-color-active: var(--slick-dot-color);
+    --slick-prev-character: "\2190";
+    --slick-next-character: "\2192";
+    --slick-dot-character: "\2022";
+    --slick-dot-size: 6px;
+    --slick-opacity-default: 0.75;
+    --slick-opacity-on-hover: 1;
+    --slick-opacity-not-active: 0.25;
+}
 
 /* Arrows */
 .slick-prev,
@@ -33,26 +35,16 @@ $slick-opacity-not-active: 0.25;
     border: none;
     outline: none;
 
-    // &:hover, &:focus {
-    //     outline: none;
-    //     background: transparent;
-    //     color: transparent;
-
-    //     &::before {
-    //         opacity: $slick-opacity-on-hover;
-    //     }
-    // }
-
     &.slick-disabled::before {
-        opacity: $slick-opacity-not-active;
+        opacity: var(--slick-opacity-not-active);
     }
 
     &::before {
-        font-family: $slick-font-family;
+        font-family: var(--slick-font-family);
         font-size: 20px;
         line-height: 1;
-        color: $slick-arrow-color;
-        opacity: $slick-opacity-default;
+        color: var(--slick-arrow-color);
+        opacity: var(--slick-opacity-default);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
@@ -67,10 +59,10 @@ $slick-opacity-not-active: 0.25;
   }
 
   &::before {
-      content: $slick-prev-character;
+      content: var(--slick-prev-character);
 
       [dir="rtl"] & {
-          content: $slick-next-character;
+          content: var(--slick-next-character);
       }
   }
 }
@@ -84,10 +76,10 @@ $slick-opacity-not-active: 0.25;
     }
 
     &::before {
-        content: $slick-next-character;
+        content: var(--slick-next-character);
 
         [dir="rtl"] & {
-            content: $slick-prev-character;
+            content: var(--slick-prev-character);
         }
     }
 }
@@ -133,7 +125,7 @@ $slick-opacity-not-active: 0.25;
                 outline: none;
 
                 &::before {
-                    opacity: $slick-opacity-on-hover;
+                    opacity: var(--slick-opacity-on-hover);
                 }
             }
 
@@ -141,23 +133,23 @@ $slick-opacity-not-active: 0.25;
                 position: absolute;
                 top: 0;
                 left: 0;
-                content: $slick-dot-character;
+                content: var(--slick-dot-character);
                 width: 20px;
                 height: 20px;
-                font-family: $slick-font-family;
-                font-size: $slick-dot-size;
+                font-family: var(--slick-font-family);
+                font-size: var(--slick-dot-size);
                 line-height: 20px;
                 text-align: center;
-                color: $slick-dot-color;
-                opacity: $slick-opacity-not-active;
+                color: var(--slick-dot-color);
+                opacity: var(--slick-opacity-not-active);
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
             }
         }
 
         &.slick-active button::before {
-            color: $slick-dot-color-active;
-            opacity: $slick-opacity-default;
+            color: var(--slick-dot-color-active);
+            opacity: var(--slick-opacity-default);
         }
     }
 }
@@ -190,7 +182,7 @@ $slick-opacity-not-active: 0.25;
 
   .slick-loading & {
     // background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
-    background-image: url('ajax-loader.gif');
+    background-image: url('../images/ajax-loader.gif');
     background-color: #fff;
     background-repeat: no-repeat;
     background-position: center center;

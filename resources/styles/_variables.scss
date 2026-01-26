@@ -1,20 +1,49 @@
 /*! purgecss start ignore */
 
-// fonts
-$body-font: 'Montserrat', sans-serif;
+/* montserrat-300 - latin */
+@font-face {
+  font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/montserrat-v25-latin-300.woff2') format('woff2');
+}
 
-// weights
-$weight-light: 300;
-$weight-regular: 400;
-$weight-medium: 500;
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/montserrat-v25-latin-regular.woff2') format('woff2');
+}
 
-// colors
-$black: #222;
-$charcoal: #414141;
-$light-gray: #eaeaea;
-$white: #fff;
-$blue: #4facd8;
-$yellow: #f3d34e;
-$black-shadow: rgba(0 0 0 / 3%);
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/montserrat-v25-latin-500.woff2') format('woff2');
+}
+
+:root {
+  --body-font: 'Montserrat', sans-serif;
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --white: #fff;
+  --black: #222;
+  --charcoal: #414141;
+  --light-gray: #eaeaea;
+  --blue: #4facd8;
+  --blue-trans: rgba(79 172 216 / 50%);
+  --yellow: #f3d34e;
+  --black-shadow: rgba(0 0 0 / 3%);
+  --black-overlay: rgba(0 0 0 / 80%);
+  --light-red: #ffd8d8;
+  --green: #99C555;
+}
 
 /*! purgecss end ignore */

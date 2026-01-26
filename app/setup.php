@@ -15,7 +15,6 @@ use function Roots\bundle;
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
-    wp_enqueue_style( 'google_fonts', '//fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap', false, null );
 }, 100);
 
 /**

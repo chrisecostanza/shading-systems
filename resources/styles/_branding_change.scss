@@ -1,0 +1,231 @@
+#branding-change-hero {
+  height: 400px;
+  width: 100%;
+  position: relative;
+
+  @media (min-width: 768px) {
+    height: 650px;
+  }
+
+  .branding-change-hero-photo {
+    width: 100%;
+    height: 400px;
+
+    @media (min-width: 768px) {
+      height: 650px;
+    }
+
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: bottom;
+
+      @media (min-width: 768px) {
+        height: 650px;
+      }
+    }
+  }
+
+  .branding-change-hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--black-overlay);
+  }
+
+  .branding-change-hero-grid {
+    width: 100%;
+    height: 100%;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 30px 0;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    div.branding-change-hero-container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:first-child {
+        border-right: none;
+
+        @media (min-width: 768px) {
+          border-right: 1px solid var(--white);
+        }
+      }
+
+      .branding-change-hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border: none;
+
+        @media (min-width: 768px) {
+          height: 190px;
+        }
+
+        @media (min-width: 950px) {
+          height: 250px;
+        }
+
+        p {
+          color: var(--white);
+          font-size: 24px;
+          font-weight: var(--weight-medium);
+          text-transform: uppercase;
+        }
+
+        img {
+          width: 280px;
+          height: auto;
+
+          @media (min-width: 950px) {
+            width: 425px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#branding-change-announcement {
+  background-color: var(--blue);
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  p {
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 1.1;
+    text-align: center;
+    color: var(--white);
+  }
+}
+
+#branding-new-name {
+  background-color: var(--charcoal);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+
+  h2 {
+    color: var(--white);
+    margin-bottom: 35px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto 40px;
+  }
+
+  p {
+    color: var(--white);
+    max-width: 880px;
+    margin: 0 auto 40px;
+  }
+}
+
+#branding-same-team {
+  background-color: var(--light-gray);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+
+  .branding-same-team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .branding-same-team-grid-item {
+    margin-bottom: 25px;
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .branding-same-team-title {
+      background-color: var(--blue);
+      width: 100%;
+      padding: 15px 10px;
+      text-align: center;
+
+      h3 {
+        color: var(--white);
+        font-size: 18px;
+        line-height: 1;
+        font-weight: var(--weight-medium);
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  p {
+    max-width: 880px;
+    margin: 0 auto 40px;
+  }
+}
+
+#branding-expertise {
+  background-color: var(--white);
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .row {
+    align-items: center;
+  }
+
+  .col-left {
+    margin-bottom: 30px;
+
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+    }
+  }
+
+  .col-right {
+    text-align: center;
+
+    @media (min-width: 992px) {
+      text-align: left;
+      padding-left: 40px;
+    }
+  }
+
+  .expertise-paragraph {
+    margin-bottom: 30px;
+  }
+}

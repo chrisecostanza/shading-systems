@@ -1,13 +1,17 @@
 .office-contact-content {
-  padding: 24px 90px 30px;
+  padding: 24px 10px 30px;
   width: 100%;
   max-width: 550px;
   margin: 60px auto 0;
-  border: 1px solid $charcoal;
+  border: 1px solid var(--charcoal);
   text-align: center;
-  background-color: $white;
+  background-color: var(--white);
   z-index: 1;
   position: relative;
+
+  @media (min-width: 576px) {
+    padding: 24px 90px 30px;
+  }
 
   h2 {
     margin-bottom: 20px;
@@ -23,7 +27,7 @@
     line-height: 1;
 
     a {
-      color: $charcoal;
+      color: var(--charcoal);
     }
   }
 
@@ -38,11 +42,20 @@
 }
 
 #office-map-embed {
-  margin-top: -50px;
+  margin-top: 20px;
   margin-bottom: 50px;
+  min-height: 50px;
+
+  @media (min-width: 576px) {
+    margin-top: -50px;
+  }
+
+  .container {
+    padding: 0;
+  }
 
   .map-container {
-    border: 1px solid $charcoal;
+    border: 1px solid var(--charcoal);
     height: 382px;
   }
 }

@@ -1,14 +1,19 @@
 @include('partials.page-header')
 
-<div id="home-hero">
+<section id="home-hero">
   @php $hero_photo_id = get_field('hero_image') @endphp
   @php $hero_photo = wp_get_attachment_image_src( $hero_photo_id, 'full' ) @endphp
   @php $hero_photo_alt = get_post_meta($hero_photo_id, '_wp_attachment_image_alt', true) @endphp
   <img class="hero-image" src="@php echo $hero_photo[0] @endphp" alt="@php echo $hero_photo_alt @endphp" width="100%">
+  <div class="home-weather">
+    <div class="container">
+      @php echo do_shortcode('[location-weather id="4447"]') @endphp
+    </div>
+  </div>
   <p>{{ the_field('hero_paragraph') }}</p>
-</div>
+</section>
 
-<div id="home-contact-cta" class="container">
+<section id="home-contact-cta" class="container">
   <div class="home-contact-left">
     <h2>{{ the_field('home_contact_h2') }}</h2>
     <p>{{ the_field('home_contact_paragraph') }}</p>
@@ -20,7 +25,7 @@
         @php $home_vid_placeholder_id = get_field('home_video_placeholder') @endphp
         @php $home_vid_placeholder_photo = wp_get_attachment_image_src( $home_vid_placeholder_id, 'full' ) @endphp
         @php $home_vid_placeholder_photo_alt = get_post_meta($home_vid_placeholder_id, '_wp_attachment_image_alt', true) @endphp
-        <img class="hero-image" src="@php echo $home_vid_placeholder_photo[0] @endphp" alt="@php echo $home_vid_placeholder_photo_alt @endphp" width="100%">
+        <img src="@php echo $home_vid_placeholder_photo[0] @endphp" alt="@php echo $home_vid_placeholder_photo_alt @endphp" width="100%" height="auto">
         <img class="home-play-btn" src="@asset('images/icon-video-play-btn-black.svg')" alt="Play Button">
       </a>
     </div>
@@ -35,35 +40,38 @@
           </div>
           <div class="modal-body">
             <div class="ratio ratio-16x9">
-              <iframe data-src="https://www.youtube.com/embed/{{ the_field('ss_video_id') }}" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
+              {{-- <iframe data-src="https://www.youtube.com/embed/{{ the_field('ss_video_id') }}" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe> --}}
+              <iframe data-src="https://player.vimeo.com/video/{{ the_field('ss_video_id') }}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Louvered Pergola -  The Denver Shade Company"></iframe>
+              <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div id="home-banner">
+<section id="home-banner">
   <div class="container">
     <h3>We Turned The Whole Concept Of Automated Shades Inside Out</h3>
   </div>
-</div>
+</section>
 
-<div id="home-exterior-products">
+<section id="home-exterior-products">
   <div class="container">
     <h2>Exterior Products</h2>
     <div class="home-ext-prod-list">
       @php $args = array(
         'posts_per_page' => -1,
         'post_type' => 'products',
+        'post_parent' => 0,
         'post_status' => 'publish',
         'order' => 'ASC',
         'tax_query' => array(
           array(
             'taxonomy' => 'product-location',
             'field'    => 'slug',
-            'terms'    => 'exterior',
+            'terms'    => 'outdoor',
           ),
         ),
       );
@@ -96,22 +104,23 @@
       @php wp_reset_postdata() @endphp
     </div>
   </div>
-</div>
+</section>
 
-<div id="home-interior-products">
+<section id="home-interior-products">
   <div class="container">
     <h2>Interior Products</h2>
     <div class="home-int-prod-list">
       @php $args = array(
         'posts_per_page' => -1,
         'post_type' => 'products',
+        'post_parent' => 0,
         'post_status' => 'publish',
         'order' => 'ASC',
         'tax_query' => array(
           array(
             'taxonomy' => 'product-location',
             'field'    => 'slug',
-            'terms'    => 'interior',
+            'terms'    => 'indoor',
           ),
         ),
       );
@@ -144,31 +153,31 @@
       @php wp_reset_postdata() @endphp
     </div>
   </div>
-</div>
+</section>
 
-<div id="home-outdoor-projects">
+<section id="home-outdoor-projects">
   @php $outdoor_proj_id = get_field('outdoors_photo') @endphp
   @php $outdoor_proj_photo = wp_get_attachment_image_src( $outdoor_proj_id, 'full' ) @endphp
   @php $outdoor_proj_alt = get_post_meta($outdoor_proj_id, '_wp_attachment_image_alt', true) @endphp
-  <img class="int-prod-featured-image" src="@php echo $outdoor_proj_photo[0] @endphp" alt="@php echo $outdoor_proj_alt @endphp">
+  <img class="int-prod-featured-image" src="@php echo $outdoor_proj_photo[0] @endphp" alt="@php echo $outdoor_proj_alt @endphp" width="100%" height="auto">
   <div class="container home-project-content">
     <h2>{{ the_field('outdoors_title') }}</h2>
     <a href="{{ the_field('outdoors_button_url') }}" class="btn btn-yellow">{{ the_field('outdoors_button_text') }}</a>
   </div>
-</div>
+</section>
 
-<div id="home-indoor-projects">
+<section id="home-indoor-projects">
   @php $indoor_proj_id = get_field('indoors_photo') @endphp
   @php $indoor_proj_photo = wp_get_attachment_image_src( $indoor_proj_id, 'full' ) @endphp
   @php $indoor_proj_alt = get_post_meta($indoor_proj_id, '_wp_attachment_image_alt', true) @endphp
-  <img class="int-prod-featured-image" src="@php echo $indoor_proj_photo[0] @endphp" alt="@php echo $indoor_proj_alt @endphp">
+  <img class="int-prod-featured-image" src="@php echo $indoor_proj_photo[0] @endphp" alt="@php echo $indoor_proj_alt @endphp" width="100%" height="auto">
   <div class="container home-project-content">
     <h2>{{ the_field('indoors_title') }}</h2>
     <a href="{{ the_field('indoors_button_url') }}" class="btn">{{ the_field('indoors_button_text') }}</a>
   </div>
-</div>
+</section>
 
-<div id="home-testimonials">
+<section id="home-testimonials">
   <div class="container">
     @php if ( have_rows('testimonial_list') ) : @endphp
       @php while ( have_rows('testimonial_list') ) : the_row() @endphp
@@ -177,9 +186,9 @@
       @php endwhile @endphp
     @php endif @endphp
   </div>
-</div>
+</section>
 
-<div id="home-blog">
+{{-- <section id="home-blog">
   <div class="container">
     <h2>Shades Of Perfection</h2>
     <div class="home-blog-list">
@@ -212,4 +221,4 @@
       @php wp_reset_postdata() @endphp
     </div>
   </div>
-</div>
+</section> --}}

@@ -1,0 +1,163 @@
+#maintenance-plan-hero {
+  height: 510px;
+  width: 100%;
+  position: relative;
+
+  .maintenance-plan-hero-photo {
+    width: 100%;
+    height: 510px;
+
+    img {
+      width: 100%;
+      height: 510px;
+      object-fit: cover;
+      object-position: bottom;
+    }
+  }
+
+  .maintenance-plan-hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #4facd8, transparent);
+  }
+
+  .maintenance-plan-hero-content {
+    width: 100%;
+    height: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+
+    div {
+      width: 100%;
+      max-width: 650px;
+
+      h2,
+      p {
+        color: var(--white);
+      }
+
+      h2 {
+        max-width: 550px;
+        text-wrap-style: balance;
+      }
+    }
+  }
+}
+
+.breadcrumb-container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  span {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+#maintenance-plan-services {
+  background-color: var(--light-gray);
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  h2 {
+    text-align: center;
+  }
+
+  .maintenance-plan-services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .maintenance-plan-services-grid-item {
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .maintenance-plan-service-name {
+        background-color: var(--blue);
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+
+        h3 {
+          color: var(--white);
+          font-size: 18px;
+          line-height: 1;
+          font-weight: var(--weight-medium);
+          text-transform: uppercase;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .maintenance-plan-services-description {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+#maintenance-plan-priority {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .row {
+    align-items: center;
+  }
+
+  .col-left {
+    margin-bottom: 30px;
+
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+    }
+  }
+
+  .col-right {
+    max-width: 750px;
+    text-align: center;
+
+    @media (min-width: 992px) {
+      max-width: 450px;
+      text-align: left;
+      padding-left: 40px;
+    }
+
+    h2 {
+      text-wrap-style: balance;
+    }
+  }
+
+  .maintenance-plan-paragraph {
+    margin-bottom: 30px;
+  }
+}
+
+

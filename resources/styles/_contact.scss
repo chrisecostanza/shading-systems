@@ -1,0 +1,174 @@
+#contact-page {
+  margin-top: 45px;
+
+  .col-left {
+    padding: 30px 15px 100px;
+    background-color: var(--light-gray);
+
+    @media (width >= 991px) {
+      padding: 30px 35px 100px;
+    }
+  }
+
+  .col-right {
+    padding: 30px 0;
+
+    @media (width >= 991px) {
+      padding: 0 12px 100px 50px;
+    }
+
+    .contact-request-service-content {
+      margin-bottom: 50px;
+    }
+
+    .location-content {
+      margin-bottom: 55px;
+
+      h3 {
+        margin-bottom: 15px;
+        font-size: 30px;
+      }
+  
+      .office-address {
+        margin-bottom: 15px;
+      }
+  
+      .office-phone {
+        margin-bottom: 20px;
+      }
+  
+      .office-notes {
+        margin-bottom: 0;
+
+        p {
+          margin-bottom: 20px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .btn {
+        margin-top: 25px;
+      }
+    }
+  }
+}
+
+/*! purgecss start ignore */
+.form-tab-buttons {
+  .tab-btn {
+    padding: 13px;
+    width: 100%;
+    font-weight: var(--weight-light);
+
+    @media (width >= 600px) {
+      width: auto;
+    }
+  }
+
+  .tab-btn.active {
+    background-color: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+  }
+}
+
+.tab-content {
+  margin-top: 30px;
+
+  &.active {
+    display: block;
+  }
+}
+
+.forminator-ui.forminator-custom-form:not(.forminator-size--small)[data-grid="open"] .forminator-row:not(:last-child) {
+  margin-bottom: 30px !important;
+}
+
+.forminator-ui.forminator-design--default .forminator-label {
+  font-size: 21px !important;
+  margin-bottom: 12px !important;
+  font-weight: var(--weight-light) !important;
+  color: var(--charcoal) !important;
+  line-height: 1 !important;
+}
+
+.forminator-ui.forminator-design--default select.forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"] .select2-selection__rendered {
+  background-color: var(--white) !important;
+  height: 43px !important;
+  font-size: 17px !important;
+  line-height: 27px !important;
+  font-weight: var(--weight-light) !important;
+  color: var(--charcoal) !important;
+}
+
+.forminator-ui.forminator-design--default .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"] .select2-selection__arrow {
+  background-color: var(--white) !important;
+  height: 43px !important;
+}
+
+.forminator-ui.forminator-design--default .forminator-input, 
+.forminator-ui.forminator-design--default .forminator-input:hover, 
+.forminator-ui.forminator-design--default .forminator-input:focus, 
+.forminator-ui.forminator-design--default .forminator-input:active,
+.forminator-ui.forminator-design--default .forminator-textarea, 
+.forminator-ui.forminator-design--default .forminator-textarea:hover, 
+.forminator-ui.forminator-design--default .forminator-textarea:focus, 
+.forminator-ui.forminator-design--default .forminator-textarea:active {
+  background-color: var(--white) !important;
+  height: 43px !important;
+  font-size: 17px !important;
+  line-height: 27px !important;
+}
+
+.forminator-ui.forminator-design--default .forminator-checkbox .forminator-checkbox-box,
+.forminator-ui.forminator-design--default .forminator-checkbox input:checked+.forminator-checkbox-box,
+.forminator-ui.forminator-design--default .forminator-radio .forminator-radio-bullet,
+.forminator-ui.forminator-design--default .forminator-radio input:checked+.forminator-radio-bullet,
+.forminator-ui.forminator-design--default .forminator-multi-upload {
+  background-color: var(--white) !important;
+}
+
+.forminator-ui.forminator-design--default .forminator-checkbox .forminator-checkbox-box ~ span,
+.forminator-ui.forminator-design--default .forminator-radio .forminator-radio-bullet ~ span {
+  font-size: 17px !important;
+  font-weight: var(--weight-light) !important;
+  color: var(--charcoal) !important;
+}
+
+.forminator-ui.forminator-custom-form[data-design="default"] .forminator-field {
+  font-size: 15px !important;
+}
+
+.forminator-ui.forminator-design--default .forminator-button-submit {
+  padding: 13px 25px !important;
+  font-weight: var(--weight-regular) !important;
+  font-size: 19px !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+  background: var(--white) !important;
+  border: 1px solid var(--blue) !important;
+  color: var(--charcoal) !important;
+  border-radius: 0 !important;
+
+  &:hover {
+    text-decoration: none !important;
+    border: 1px solid var(--blue) !important;
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    box-shadow: none !important;
+  }
+}
+
+body.admin-bar > .forminator-select.forminator-select-dropdown-container--open {
+  margin-top: 0 !important;
+}
+
+.forminator-select.forminator-select-dropdown-container--open .forminator-select-dropdown.forminator-dropdown--default {
+  background-color: var(--white) !important;
+}
+
+/*! purgecss end ignore */

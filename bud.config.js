@@ -25,20 +25,21 @@ export default async (app) => {
       safelist: [...purgeCssWordPress.safelist],
     })
 
-    .tap(bud =>
-      bud.sass.importGlobal([
-        '@styles/variables',
-        '@styles/bootstrap',
-        '@styles/slick',
-        '@styles/global',
-        '@styles/header',
-        '@styles/home',
-        '@styles/products',
-        '@styles/offices',
-        '@styles/contact',
-        '@styles/blog',
-        '@styles/footer',
-      ]))
+    // .tap(bud =>
+    //   bud.sass.importGlobal([
+    //     '@styles/variables',
+    //     '@styles/bootstrap',
+    //     '@styles/slick',
+    //     '@styles/global',
+    //     '@styles/header',
+    //     '@styles/home',
+    //     '@styles/products',
+    //     '@styles/projects',
+    //     '@styles/offices',
+    //     '@styles/contact',
+    //     '@styles/blog',
+    //     '@styles/footer',
+    //   ]))
 
     /**
      * Directory contents to be included in the compilation

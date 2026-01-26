@@ -1,6 +1,6 @@
 /*! purgecss start ignore */
 .editor-styles-wrapper {
-  font-family: $body-font !important;
+  font-family: var(--body-font) !important;
 }
 
 .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper > :where(:not(.alignleft):not(.alignright)),

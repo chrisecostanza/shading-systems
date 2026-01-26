@@ -1,6 +1,6 @@
 footer {
-  background-color: $charcoal;
-  color: $white;
+  background-color: var(--charcoal);
+  color: var(--white);
 
   .footer-logo {
     text-align: center;
@@ -23,7 +23,7 @@ footer {
     text-align: center;
 
     @media (min-width: 768px) {
-      align-items: flex-start;
+      align-items: center;
       flex-flow: row wrap;
       text-align: left;
     }
@@ -35,17 +35,12 @@ footer {
     .footer-col-1,
     .footer-col-2,
     .footer-col-3 {
-      h5 {
-        color: $white;
+      h3 {
+        color: var(--white);
         text-transform: capitalize;
-        font-weight: $weight-regular;
-        margin-bottom: 10px;
-      }
-    }
-
-    .footer-col-1 {
-      h5 {
-        color: $white;
+        font-weight: var(--weight-regular);
+        margin-bottom: 15px;
+        font-size: 23px;
       }
     }
 
@@ -53,9 +48,9 @@ footer {
       text-align: center;
       padding-top: 0;
 
-      @media (min-width: 768px) {
-        padding-top: 30px;
-      }
+      // @media (min-width: 768px) {
+      //   padding-top: 30px;
+      // }
 
       .footer-social {
         display: flex;
@@ -69,14 +64,8 @@ footer {
       }
     }
 
-    .footer-col-3 {
-      h5 {
-        color: $white;
-      }
-    }
-
     .office-address {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       line-height: 1.25;
     }
 
@@ -84,8 +73,12 @@ footer {
       margin-bottom: 4px;
       line-height: 1;
 
+      span {
+        font-weight: var(--weight-medium);
+      }
+
       a {
-        color: $white;
+        color: var(--white);
       }
     }
   }
@@ -115,7 +108,7 @@ footer {
       }
 
       a {
-        color: $white;
+        color: var(--white);
       }
     }
   }
