@@ -24,7 +24,6 @@
     </div>
     <div class="container">
       <p class="tax-prod-intro">{{ $tax_prod_intro }}</p>
-
       <div class="product-grid">
         @while(have_posts()) @php(the_post())
           @includeFirst(['partials.content-' . get_post_type(), 'partials.content-products'])

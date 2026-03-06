@@ -238,6 +238,48 @@ domReady(async () => {
     adaptiveHeight: true,
   });
 
+  jQuery('.service-request-guides-grid').slick({
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    swipe: true,
+    touchMove: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+
   var lastId,
     topMenu = $('.single-menu-links'),
     topMenuHeight = topMenu.outerHeight() + 140,
@@ -471,6 +513,63 @@ domReady(async () => {
     sAndFForm.addEventListener('change', updateSelectedFilters);
     observer.observe(sAndFForm, {attributes: true});
   }
+
+  // Add tooltips to filter headers
+  // Use setTimeout to ensure the Search & Filter form has fully rendered
+  setTimeout(() => {
+    // Define tooltip content for each filter
+
+    const tooltipContent = {
+      'Application Area':
+        'Project scope, intended setting, and mounting method.',
+      // 'Mounting Type': 'Mounting Type filter tooltip.',
+      'Usage Types':
+        'Identifies the core benefit or primary functional purpose.',
+      Orientation:
+        'Specifies the operating direction. (i.e. Horizontal: overhead; moves in and out. Vertical: side-mounted; moves up and down.)',
+    };
+
+    const filterHeaders = document.querySelectorAll(
+      '[data-sf-field-type="taxonomy"] h4',
+    );
+
+    filterHeaders.forEach(function (header) {
+      // Check if tooltip already exists to prevent duplicates
+      if (header.querySelector('.filter-tooltip-container')) {
+        return;
+      }
+
+      // Get the header text to match with tooltip content
+      const headerText = header.textContent.trim();
+      const tooltipText = tooltipContent[headerText];
+
+      // Only add tooltip if we have content defined for this header
+      if (!tooltipText) {
+        return;
+      }
+
+      // Create tooltip container
+      const tooltipContainer = document.createElement('span');
+      tooltipContainer.className = 'filter-tooltip-container';
+
+      // Create tooltip icon
+      const tooltipIcon = document.createElement('img');
+      tooltipIcon.src =
+        '/wp-content/themes/shading-systems/resources/images/icon-info-black.svg';
+      tooltipIcon.alt = 'Information';
+      tooltipIcon.className = 'filter-tooltip-icon';
+
+      // Create tooltip text element
+      const tooltipTextElement = document.createElement('span');
+      tooltipTextElement.className = 'filter-tooltip-text';
+      tooltipTextElement.textContent = tooltipText;
+
+      // Append elements
+      tooltipContainer.appendChild(tooltipIcon);
+      tooltipContainer.appendChild(tooltipTextElement);
+      header.appendChild(tooltipContainer);
+    });
+  }, 100);
 });
 
 /**

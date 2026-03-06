@@ -112,7 +112,9 @@
                   <img src="@php echo $model_photo_photo[0] @endphp" alt="@php echo $model_photo_alt @endphp">
                 @endif
 
-                <div class="model-description">{{ the_sub_field('model_description') }}</div>
+                @if ( get_sub_field('model_description') )
+                  <div class="model-description">{{ the_sub_field('model_description') }}</div>
+                @endif
               </div>
             </div>
 
@@ -171,9 +173,29 @@
                             @php endwhile @endphp
                           </div>
                         @php endif @endphp
-                          
-                        <h3>{{ the_sub_field('version_name') }}</h3>
-                        <p class="version-description">{{ the_sub_field('version_description') }}</p>
+
+                        @if ( get_sub_field('version_learn_more_btn') )
+                          @php $learn_more = get_sub_field('version_learn_more_btn') @endphp
+                          @if( $learn_more )
+                            <h3>
+                              <a href="/products/{{ esc_html( $learn_more->post_name ) }}">{{ the_sub_field('version_name') }}</a>
+                            </h3>
+                          @endif
+                        @else
+                          <h3>{{ the_sub_field('version_name') }}</h3>
+                        @endif
+                        <div class="version-description">{{ the_sub_field('version_description') }}</div>
+
+                        @php if ( have_rows('version_descriptive_icons') ) : @endphp
+                          <div class="version-icons">
+                            @php while ( have_rows('version_descriptive_icons') ) : the_row() @endphp
+                              @php $version_icon_id = get_sub_field('version_descriptive_icon') @endphp
+                              @php $version_icon_photo = wp_get_attachment_image_src( $version_icon_id, 'full' ) @endphp
+                              @php $version_icon_alt = get_post_meta($version_icon_id, '_wp_attachment_image_alt', true) @endphp
+                              <img class="version-icon" src="@php echo $version_icon_photo[0] @endphp" alt="@php echo $version_icon_alt @endphp">
+                            @php endwhile @endphp
+                          </div>
+                        @php endif @endphp
                         
                         <div class="version-features">
                           @php if ( have_rows('version_feature_list') ) : @endphp
@@ -187,11 +209,13 @@
                           @php endif @endphp
 
                           @php $illustration_photo_id = get_sub_field('version_illustration') @endphp
-                          @php $illustration_photo = wp_get_attachment_image_src( $illustration_photo_id, 'full' ) @endphp
-                          @php $illustration_photo_alt = get_post_meta($illustration_photo_id, '_wp_attachment_image_alt', true) @endphp
-                          <div class="version-illustration">
-                            <img src="@php echo $illustration_photo[0] @endphp" alt="@php echo $illustration_photo_alt @endphp">
-                          </div>
+                            @php $illustration_photo = wp_get_attachment_image_src( $illustration_photo_id, 'full' ) @endphp
+                            @php $illustration_photo_alt = get_post_meta($illustration_photo_id, '_wp_attachment_image_alt', true) @endphp
+                            @php if ( $illustration_photo_id ) : @endphp
+                            <div class="version-illustration">
+                              <img src="@php echo $illustration_photo[0] @endphp" alt="@php echo $illustration_photo_alt @endphp">
+                            </div>
+                          @php endif @endphp
                         </div>
 
                         @php if ( get_sub_field('version_size_limitations_title') ) : @endphp
@@ -234,7 +258,7 @@
                           @php $learn_more = get_sub_field('version_learn_more_btn') @endphp
                           @if( $learn_more )
                             <div class="version-learn-more">
-                              <a href="/products/{{ esc_html( $learn_more->post_name ) }}" class="btn">Learn More</a>
+                              <a href="/products/{{ esc_html( $learn_more->post_name ) }}" class="btn btn-blue" style="display: block;">Learn More</a>
                             </div>
                           @endif
                         @endif

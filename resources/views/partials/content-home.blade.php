@@ -53,7 +53,7 @@
 
 <section id="home-banner">
   <div class="container">
-    <h3>We Turned The Whole Concept Of Automated Shades Inside Out</h3>
+    <h3>{{ the_field('home_text_banner') }}</h3>
   </div>
 </section>
 

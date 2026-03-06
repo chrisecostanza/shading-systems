@@ -251,6 +251,66 @@
       padding: 0 0 10px;
     }
 
+    .filter-tooltip-container {
+      position: relative;
+      display: inline-block;
+      margin-left: 5px;
+      vertical-align: text-top;
+    }
+
+    .filter-tooltip-icon {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+
+    .filter-tooltip-text {
+      visibility: hidden;
+      opacity: 0;
+      width: 250px;
+      background-color: #333;
+      color: #fff;
+      text-align: left;
+      border-radius: 6px;
+      padding: 12px;
+      position: absolute;
+      z-index: 1000;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -125px;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: normal;
+      transition: opacity 0.3s, visibility 0.3s;
+      text-transform: none;
+    }
+
+    .filter-tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #333 transparent transparent;
+    }
+
+    .filter-tooltip-container:hover .filter-tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .filter-tooltip-text {
+        width: 200px;
+        margin-left: -100px;
+        font-size: 13px;
+      }
+    }
+
     .searchandfilter {
       display: none;
 
@@ -728,10 +788,31 @@
 
           h3 {
             margin-bottom: 7px;
+
+            a {
+              color: var(--black);
+              text-decoration-thickness: 1px;
+              text-underline-offset: 3px;
+            }
           }
 
           .version-description {
             margin-bottom: 35px;
+          }
+
+          .version-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-top: 1px solid var(--charcoal);
+            padding-top: 35px;
+
+            img.version-icon {
+              width: 120px;
+              height: auto;
+            }
           }
 
           .version-features {
@@ -1243,7 +1324,7 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     gap: 30px 50px;
     text-align: center;
 
@@ -1370,6 +1451,13 @@
 
     p:last-child {
       margin-bottom: 0;
+    }
+
+    img.parameters-graphic {
+      width: auto;
+      height: 25px;
+      object-fit: contain;
+      margin-bottom: 10px;
     }
   }
 }

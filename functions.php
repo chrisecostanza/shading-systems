@@ -126,6 +126,57 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+// Allow SketchUp and CAD file uploads
+function allow_cad_sketchup_uploads($mimes) {
+  // SketchUp files
+  $mimes['skp'] = 'application/vnd.sketchup.skp';
+  
+  // AutoCAD files
+  $mimes['dwg'] = 'application/acad';
+  $mimes['dxf'] = 'application/dxf';
+  $mimes['dwf'] = 'application/x-dwf';
+  
+  // Other CAD formats
+  $mimes['dae'] = 'model/vnd.collada+xml'; // COLLADA
+  $mimes['obj'] = 'model/obj'; // Wavefront OBJ
+  $mimes['stl'] = 'model/stl'; // STL (3D printing)
+  $mimes['iges'] = 'model/iges'; // IGES
+  $mimes['igs'] = 'model/iges'; // IGES alternative extension
+  $mimes['step'] = 'application/step'; // STEP
+  $mimes['stp'] = 'application/step'; // STEP alternative extension
+  
+  return $mimes;
+}
+add_filter('upload_mimes', 'allow_cad_sketchup_uploads');
+
+// Fix mime type detection for CAD/SketchUp files
+function fix_cad_sketchup_mime_types($data, $file, $filename, $mimes) {
+  $ext = pathinfo($filename, PATHINFO_EXTENSION);
+  
+  // Map extensions to proper mime types
+  $cad_mimes = array(
+    'skp' => 'application/vnd.sketchup.skp',
+    'dwg' => 'application/acad',
+    'dxf' => 'application/dxf',
+    'dwf' => 'application/x-dwf',
+    'dae' => 'model/vnd.collada+xml',
+    'obj' => 'model/obj',
+    'stl' => 'model/stl',
+    'iges' => 'model/iges',
+    'igs' => 'model/iges',
+    'step' => 'application/step',
+    'stp' => 'application/step',
+  );
+  
+  if (array_key_exists($ext, $cad_mimes)) {
+    $data['ext'] = $ext;
+    $data['type'] = $cad_mimes[$ext];
+  }
+  
+  return $data;
+}
+add_filter('wp_check_filetype_and_ext', 'fix_cad_sketchup_mime_types', 10, 4);
+
 // New Custom Post Types
 // Projects CPT
 function register_cpt_projects() {

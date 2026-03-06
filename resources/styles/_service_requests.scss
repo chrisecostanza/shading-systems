@@ -44,10 +44,6 @@
   }
 
   .service-request-guides-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 185px);
-    gap: 20px;
-    justify-content: center;
     max-width: 1050px;
     margin: 0 auto 30px;
 
@@ -56,17 +52,11 @@
       height: 150px;
       border: 1px solid var(--charcoal);
       padding: 15px;
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 10px;
       justify-content: center;
-      align-items: center;
       text-align: center;
-
-      @media (min-width: 450px) {
-        grid-template-rows: subgrid;
-        grid-row: span 2;
-      }
 
       &.active {
         background-color: var(--blue-trans);

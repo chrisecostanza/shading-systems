@@ -111,24 +111,66 @@
     </div>
     <div class="tab-content" id="parametersTabsContent">
       <div class="tab-pane fade show active" id="sun-tab-pane" role="tabpanel" aria-labelledby="sun-tab" tabindex="0">
+        @php $sun_id = get_field('product_style_parameter_sun_graphic') @endphp
+        @php $sun_photo = wp_get_attachment_image_src( $sun_id, 'full' ) @endphp
+        @php $sun_alt = get_post_meta($sun_id, '_wp_attachment_image_alt', true) @endphp
+        @if ( $sun_id )
+          <img class="parameters-graphic" src="@php echo $sun_photo[0] @endphp" alt="@php echo $sun_alt @endphp" width="100%" height="25">
+        @endif
         {{ the_field('product_style_parameter_sun_details') }}
       </div>
       <div class="tab-pane fade" id="wind-tab-pane" role="tabpanel" aria-labelledby="wind-tab" tabindex="0">
+        @php $wind_id = get_field('product_style_parameter_wind_graphic') @endphp
+        @php $wind_photo = wp_get_attachment_image_src( $wind_id, 'full' ) @endphp
+        @php $wind_alt = get_post_meta($wind_id, '_wp_attachment_image_alt', true) @endphp
+        @if ( $wind_id )
+          <img class="parameters-graphic" src="@php echo $wind_photo[0] @endphp" alt="@php echo $wind_alt @endphp" width="100%" height="25">
+        @endif
         {{ the_field('product_style_parameter_wind_details') }}
       </div>
       <div class="tab-pane fade" id="snow-tab-pane" role="tabpanel" aria-labelledby="snow-tab" tabindex="0">
+        @php $snow_id = get_field('product_style_parameter_snow_graphic') @endphp
+        @php $snow_photo = wp_get_attachment_image_src( $snow_id, 'full' ) @endphp
+        @php $snow_alt = get_post_meta($snow_id, '_wp_attachment_image_alt', true) @endphp
+        @if ( $snow_id )
+          <img class="parameters-graphic" src="@php echo $snow_photo[0] @endphp" alt="@php echo $snow_alt @endphp" width="100%" height="25">
+        @endif
         {{ the_field('product_style_parameter_snow_details') }}
       </div>
       <div class="tab-pane fade" id="rain-tab-pane" role="tabpanel" aria-labelledby="rain-tab" tabindex="0">
+        @php $rain_id = get_field('product_style_parameter_rain_graphic') @endphp
+        @php $rain_photo = wp_get_attachment_image_src( $rain_id, 'full' ) @endphp
+        @php $rain_alt = get_post_meta($rain_id, '_wp_attachment_image_alt', true) @endphp
+        @if ( $rain_id )
+          <img class="parameters-graphic" src="@php echo $rain_photo[0] @endphp" alt="@php echo $rain_alt @endphp" width="100%" height="25">
+        @endif
         {{ the_field('product_style_parameter_rain_details') }}
       </div>
       <div class="tab-pane fade" id="obstruction-tab-pane" role="tabpanel" aria-labelledby="obstruction-tab" tabindex="0">
+        @php $obstruction_id = get_field('product_style_parameter_obstruction_graphic') @endphp
+        @php $obstruction_photo = wp_get_attachment_image_src( $obstruction_id, 'full' ) @endphp
+        @php $obstruction_alt = get_post_meta($obstruction_id, '_wp_attachment_image_alt', true) @endphp
+        @if ( $obstruction_id )
+          <img class="parameters-graphic" src="@php echo $obstruction_photo[0] @endphp" alt="@php echo $obstruction_alt @endphp" width="100%" height="25">
+        @endif
         {{ the_field('product_style_parameter_obstruction_details') }}
       </div>
       <div class="tab-pane fade" id="temperature-tab-pane" role="tabpanel" aria-labelledby="temperature-tab" tabindex="0">
+        @php $temperature_id = get_field('product_style_parameter_temperature_graphic') @endphp
+        @php $temperature_photo = wp_get_attachment_image_src( $temperature_id, 'full' ) @endphp
+        @php $temperature_alt = get_post_meta($temperature_id, '_wp_attachment_image_alt', true) @endphp
+        @if ( $temperature_id )
+          <img class="parameters-graphic" src="@php echo $temperature_photo[0] @endphp" alt="@php echo $temperature_alt @endphp" width="100%" height="25">
+        @endif
         {{ the_field('product_style_parameter_temperature_details') }}
       </div>
       <div class="tab-pane fade" id="hail-tab-pane" role="tabpanel" aria-labelledby="hail-tab" tabindex="0">
+        @php $hail_id = get_field('product_style_parameter_hail_graphic') @endphp
+        @php $hail_photo = wp_get_attachment_image_src( $hail_id, 'full' ) @endphp
+        @php $hail_alt = get_post_meta($hail_id, '_wp_attachment_image_alt', true) @endphp
+        @if ( $hail_id )
+          <img class="parameters-graphic" src="@php echo $hail_photo[0] @endphp" alt="@php echo $hail_alt @endphp" width="100%" height="25">
+        @endif
         {{ the_field('product_style_parameter_hail_details') }}
       </div>
     </div>

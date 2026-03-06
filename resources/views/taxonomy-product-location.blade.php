@@ -13,9 +13,9 @@
 
   <section id="product-tax-section">
     <div class="fluid-container tax-product-hero">
-    @php $tax_prod_term = get_queried_object() @endphp
-    @php $tax_prod_subtitle = get_field('product_location_subtitle', $tax_prod_term) @endphp
-    @php $tax_prod_intro = get_field('product_location_intro_paragraph', $tax_prod_term) @endphp
+      @php $tax_prod_term = get_queried_object() @endphp
+      @php $tax_prod_subtitle = get_field('product_location_subtitle', $tax_prod_term) @endphp
+      @php $tax_prod_intro = get_field('product_location_intro_paragraph', $tax_prod_term) @endphp
       @php $tax_prod_id = get_field('product_location_photo', $tax_prod_term) @endphp
       @php $tax_prod_photo = wp_get_attachment_image_src( $tax_prod_id, 'full' ) @endphp
       @php $tax_prod_alt = get_post_meta($tax_prod_id, '_wp_attachment_image_alt', true) @endphp
