@@ -8,6 +8,14 @@
   <h1>{{ the_title() }}</h1>
 </div>
 
+<section id="single-blog-breadcrumbs">
+  <div class="container">
+    <p class="blog-breadcrumb">
+      <a href="/blog/">All Blog Posts</a><span style="padding: 0 10px;">/</span>{{ the_title() }}
+    </p>
+  </div>
+</section>
+
 <section id="blog-single-section">
   <div class="container very-thin-container">
     <div class="row">

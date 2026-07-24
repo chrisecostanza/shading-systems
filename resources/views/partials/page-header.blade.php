@@ -1,5 +1,7 @@
 <div class="page-header">
-  @if ( get_post_type() == 'page' )
+  @if ( is_search() )
+    <h1>{{ sprintf(__('Search Results for %s', 'sage'),get_search_query() ) }}</h1>
+  @elseif ( get_post_type() == 'page' )
     <h1>{{ the_field('page_title') }}</h1>
   @elseif ( is_singular( 'products' ) )
     <h1>{{ the_field('product_name') }}</h1>

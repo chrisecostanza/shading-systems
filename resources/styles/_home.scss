@@ -1,62 +1,377 @@
-/*! purgecss start ignore */
 #home-hero {
-  text-align: center;
-  margin-bottom: 60px;
+  .home-hero-grid {
+    .row {
+      align-items: center;
 
-  img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    object-position: center;
+      .home-hero-left {
+        order: 1;
+        padding-top: 40px;
+        padding-bottom: 40px;
 
-    @media (min-width: 768px) {
-      height: 450px;
-    }
+        @media (min-width: 992px) {
+          order: 0;
+        }
 
-    @media (min-width: 992px) {
-      height: 650px;
-    }
-  }
+        .ss-video-placeholder {
+          max-width: 800px;
+          margin: 0 auto;
 
-  .home-weather {
-    background-color: var(--yellow);
-    margin-bottom: 25px;
+          @media (min-width: 992px) {
+            max-width: 100%;
+          }
 
-    #splw-location-weather-pro-4447.splw-main-wrapper:not(.weather-map) {
-      margin: 0 !important;
-    }
+          .home-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: 2;
+          }
+        }
 
-    .splw-pro-daily-weather-details {
-      display: none;
+        .home-hero-left-content {
+          width: 100%;
+          max-width: 470px;
+          margin-left: auto;
+          margin-right: auto;
 
-      @media (min-width: 640px) {
-        max-width: 485px !important;
-        display: block;
+          @media (min-width: 992px) {
+            margin-right: 0;
+          }
+
+          h1 {
+            text-transform: none;
+          }
+        }
+      }
+
+      .home-hero-right {
+        padding: 0;
+
+        @media (min-width: 992px) {
+          padding-left: 40px;
+        }
+
+        img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          object-position: center;
+
+          @media (min-width: 768px) {
+            height: 450px;
+          }
+
+          @media (min-width: 992px) {
+            height: 650px;
+          }
+        }
       }
     }
+  }
+}
 
-    .horizontal-view.horizontal-three .splw-pro-templates-body div:is(.splw-pro-weather-short-desc,
-    .splw-pro-header-title-wrapper,
-    .splw-pro-current-temp,
-    .splw-other-opt,
-    .splw-adv-forecast-days) {
-      margin-bottom: 0 !important;
-    }
+/*! purgecss start ignore */
+#home-weather {
+  background-color: var(--yellow);
 
-    .splw-pro-weather-short-desc {
-      margin-top: 0 !important;
+  #splw-location-weather-pro-4447.splw-main-wrapper:not(.weather-map) {
+    margin: 0 !important;
+  }
+
+  .splw-pro-daily-weather-details {
+    display: none;
+
+    @media (min-width: 640px) {
+      max-width: 485px !important;
+      display: block;
     }
   }
 
-  p {
-    font-size: 26px;
-    line-height: 1.15;
-    max-width: 900px;
-    margin: 0 auto;
+  .horizontal-view.horizontal-three .splw-pro-templates-body div:is(.splw-pro-weather-short-desc,
+  .splw-pro-header-title-wrapper,
+  .splw-pro-current-temp,
+  .splw-other-opt,
+  .splw-adv-forecast-days) {
+    margin-bottom: 0 !important;
+  }
+
+  .splw-pro-weather-short-desc {
+    margin-top: 0 !important;
   }
 }
 
 /*! purgecss end ignore */
+
+#home-outdoor-systems {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--light-gray);
+
+  .home-outdoor-systems-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 20px 60px;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 540px auto;
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .outdoor-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 20px 40px;
+    margin-top: 40px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .outdoor-stat {
+      font-size: 37px;
+      line-height: 1;
+      font-weight: var(--weight-bold);
+      margin-bottom: 10px;
+      text-align: center;
+      display: block;
+
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+    }
+
+    .outdoor-stat-label {
+      font-size: 19px;
+      line-height: 1;
+      font-weight: var(--weight-medium);
+      text-align: center;
+      display: block;
+
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+    }
+  }
+}
+
+#home-outdoor-shade {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .home-outdoor-shade-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 40px 60px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-outdoor-shade-card {
+      background-color: var(--light-gray);
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 50px auto;
+      align-items: start;
+      gap: 20px 20px;
+
+      img.home-outdoor-shade-icon {
+        width: 50px;
+        height: auto;
+      }
+
+      h3 {
+        margin-bottom: 15px;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .home-outdoor-shade-content {
+    text-align: center;
+    margin-top: 40px;
+  }
+}
+
+#home-brands {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--blue-trans);
+
+  h3 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .home-brands-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+    @media (min-width: 450px) {
+      flex-flow: row wrap;
+    }
+
+    div {
+      width: auto;
+      height: 50px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: 50px;
+    }
+  }
+}
+
+#home-projects {
+  margin-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--yellow);
+
+  .home-projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    grid-gap: 40px 60px;
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-gap: 40px 100px;
+    }
+  }
+
+  .home-projects-left {
+    text-align: center;
+
+    h2 {
+      margin-bottom: 10px;
+
+      @media (min-width: 992px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      text-align: left;
+    }
+  }
+}
+
+#home-services {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .home-services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 20px 60px;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .home-service-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 40px 60px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    img.home-service-photo {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      object-position: center;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+#home-indoor-shade {
+  margin-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--light-gray);
+
+  .home-indoor-shade-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    grid-gap: 40px 60px;
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-gap: 40px 100px;
+    }
+  }
+
+  .home-indoor-shade-right {
+    text-align: center;
+
+    h2 {
+      margin-bottom: 10px;
+
+      @media (min-width: 992px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      text-align: left;
+    }
+  }
+}
 
 #home-contact-cta {
   display: grid;
@@ -258,33 +573,77 @@
   }
 }
 
+/*! purgecss start ignore */
 #home-testimonials {
   padding-top: 60px;
   padding-bottom: 60px;
+  background-color: var(--yellow);
 
-  .container {
-    background-image: url('../images/icon-large-quotes.svg');
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: auto;
-    max-width: 656px;
-    margin: 0 auto;
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
 
-    .testimonial-content {
-      text-align: center;
-      max-width: 615px;
-      margin: 0 auto;
-      padding-top: 30px;
-    }
+  .slick-track {
+    display: flex !important;
+  }
 
-    .testimonial-author {
-      font-size: 19px;
-      font-weight: var(--weight-regular);
-      text-align: right;
-      padding-right: 40px;
+  .slick-slide {
+    height: inherit !important;
+    display: flex !important;
+  }
+
+  .slick-slide > div {
+    display: flex;
+    width: 100%;
+  }
+
+  .home-testimonial-card {
+    padding: 20px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    .home-testimonial-card-content {
+      background-color: var(--white);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      width: 100%;
+
+      .home-testimonial-card-content-top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px 20px;
+
+        img {
+          margin-bottom: 10px;
+        }
+      }
+
+      .testimonial-author {
+        display: block;
+        font-size: 20px;
+        font-weight: var(--weight-medium);
+        margin-bottom: 0;
+      }
+
+      .testimonial-job {
+        display: block;
+        margin-bottom: 0;
+      }
+
+      p.testimonial-content {
+        margin-bottom: 0;
+      }
     }
   }
 }
+
+/*! purgecss end ignore */
 
 // #home-blog {
 //   background-color: var(--light-gray);

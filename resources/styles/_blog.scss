@@ -1,1 +1,45 @@
+.single-post {
+  .page-header {
+    h1 {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
 
+#single-blog-breadcrumbs {
+  padding-top: 10px;
+  padding-bottom: 40px;
+
+  .blog-breadcrumb {
+    font-size: 17px;
+    margin-bottom: 0;
+  }
+}
+
+.date-published {
+  font-size: 17px;
+  margin-bottom: 10px;
+  display: block;
+  color: var(--charcoal);
+}
+
+.sharing-icons-container {
+  margin-bottom: 60px;
+
+  p {
+    font-weight: var(--weight-bold);
+    margin-bottom: 10px;
+  }
+
+  .sharing-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

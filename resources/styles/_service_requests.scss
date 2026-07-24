@@ -138,9 +138,13 @@
     .faq-panel {
       font-size: 18px;
       margin-top: 15px;
+      
+      p {
+        font-weight: var(--weight-regular);
 
-      p:last-of-type {
-        margin-bottom: 0;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
       }
     }
   }

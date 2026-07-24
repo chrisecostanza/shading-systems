@@ -11,6 +11,65 @@ import domReady from '@roots/sage/client/dom-ready';
  * Application entrypoint
  */
 domReady(async () => {
+  // 3-column dropdowns: when a dropdown contains li.menu-section-title,
+  // split items into two wrapper divs so the section title and items after
+  // it occupy a dedicated 3rd column.
+  document.querySelectorAll('.dropdown-menu').forEach(function (menu) {
+    var sectionTitle = menu.querySelector('li.menu-section-title');
+    if (!sectionTitle) return;
+
+    var items = Array.from(menu.children);
+    var sectionIndex = items.indexOf(sectionTitle);
+    if (sectionIndex === -1) return;
+
+    var preItems = items.slice(0, sectionIndex);
+    var sectionItems = items.slice(sectionIndex);
+
+    var preDiv = document.createElement('div');
+    preDiv.className = 'dd-pre-section';
+    preItems.forEach(function (item) {
+      preDiv.appendChild(item);
+    });
+
+    var sectionDiv = document.createElement('div');
+    sectionDiv.className = 'dd-section';
+    sectionItems.forEach(function (item) {
+      sectionDiv.appendChild(item);
+    });
+
+    menu.appendChild(preDiv);
+    menu.appendChild(sectionDiv);
+    menu.classList.add('has-section');
+  });
+
+  // Search toggle (desktop + mobile)
+  const searchToggleBtns = document.querySelectorAll('.search-toggle-btn');
+
+  searchToggleBtns.forEach(function (btn) {
+    const wrapper = btn.closest('#search-toggle-wrapper');
+    if (!wrapper) return;
+    const form = wrapper.querySelector('.header-search-form');
+    if (!form) return;
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const isOpen = form.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (isOpen) {
+        const field = form.querySelector('.search-field');
+        if (field) field.focus();
+      }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!btn.contains(e.target) && !form.contains(e.target)) {
+        form.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
   // Make videos load faster
   function facade() {
     var vidDefer = document.getElementsByTagName('iframe');
@@ -110,6 +169,27 @@ domReady(async () => {
           slidesToScroll: 2,
         },
       },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+
+  jQuery('.home-testimonials-carousel').slick({
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    swipe: true,
+    touchMove: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    adaptiveHeight: false,
+    responsive: [
       {
         breakpoint: 650,
         settings: {

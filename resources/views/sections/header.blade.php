@@ -1,5 +1,9 @@
 <div id="utility-bar">
-  <a href="/service-request/">Service Request</a>
+  @php if ( have_rows('utility_bar_links', 'options') ) : @endphp
+    @php while ( have_rows('utility_bar_links', 'options') ) : the_row() @endphp
+      <a href="{{ the_sub_field('utility_bar_link_url', 'options') }}">{{ the_sub_field('utility_bar_link_text', 'options') }}</a>
+    @php endwhile @endphp
+  @php endif @endphp
 </div>
 <header width="100%" class="banner sticky-time">
   <div class="fluid-container">
@@ -31,6 +35,27 @@
 
       <div id="navbarToggler" class="navbar-right collapse navbar-collapse">
         <div class="nav-utility-container">
+          {{-- <form role="search" method="get" class="search-form" action="https://shadingsystems.staging.tempurl.host/">
+            <label>
+              <span class="sr-only"> Search for: </span><input type="search" placeholder="Search …" value="" name="s">
+            </label>
+            <button>Search</button>
+          </form> --}}
+          <div id="search-toggle-wrapper">
+            <a href="#" class="search-toggle-btn" aria-label="Toggle search form" aria-expanded="false">
+              <img src="@asset('images/icon-search-black.svg')" alt="Search Icon" width="30" height="30">
+            </a>
+            <div class="header-search-form">
+              {{-- @php get_search_form(); @endphp --}}
+              <form role="search" method="get" class="search-form" action="/">
+                <label>
+                  <span class="sr-only">Search for: </span>
+                  <input class="search-field" type="search" placeholder="Search…" value="" name="s">
+                </label>
+                <button>Search</button>
+              </form>
+            </div>
+          </div>
           @if ( get_field('general_phone_number', 'options') )
             <a href="tel:{{ the_field('general_phone_number', 'options') }}">
               <img src="@asset('images/icon-phone-black.svg')" alt="Phone Icon" width="30" height="30">
@@ -58,7 +83,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <a class="navbar-brand-mobile" href="{{ home_url('/') }}">
-          <img src="@asset('images/denver-shade-logo.svg')" alt="The Denver Shade Company Logo" width="225" height="25">
+          <img src="@asset('images/shading-systems-horizontal-logo.svg')" alt="Shading Systems Logo" width="225" height="53">
           {{-- <img src="@asset('images/shading-systems-logo.svg')" alt="Shading Systems Logo" width="188" height="64"> --}}
         </a>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
@@ -86,6 +111,21 @@
 
         <div class="bottom-bar-mobile">
           <div class="mobile-contacts">
+            <div id="search-toggle-wrapper">
+              <a href="#" class="search-toggle-btn" aria-label="Toggle search form" aria-expanded="false">
+                <img src="@asset('images/icon-search-black.svg')" alt="Search Icon" width="30" height="30">
+              </a>
+              <div class="header-search-form">
+                {{-- @php get_search_form(); @endphp --}}
+                <form role="search" method="get" class="search-form" action="/">
+                  <label>
+                    <span class="sr-only">Search for: </span>
+                    <input class="search-field" type="search" placeholder="Search…" value="" name="s">
+                  </label>
+                  <button>Search</button>
+                </form>
+              </div>
+            </div>
             @if ( get_field('general_phone_number', 'options') )
               <a href="tel:{{ the_field('general_phone_number', 'options') }}">
                 <img src="@asset('images/icon-phone-black.svg')" alt="Phone Icon" width="30" height="30">

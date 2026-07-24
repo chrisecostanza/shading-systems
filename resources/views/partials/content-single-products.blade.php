@@ -1,75 +1,15 @@
 @include('partials.page-header')
 
-  <section id="single-product-hero">
-    @if ( get_field('product_hero_photo') )
-      <div class="product-hero-photo">
-        @php $product_photo_id = get_field('product_hero_photo') @endphp
-        @php $product_photo = wp_get_attachment_image_src( $product_photo_id, 'full' ) @endphp
-        @php $product_photo_alt = get_post_meta($product_photo_id, '_wp_attachment_image_alt', true) @endphp
-        <img class="product-image" src="@php echo $product_photo[0] @endphp" alt="@php echo $product_photo_alt @endphp">
-      </div>
-    @endif
-    {{-- @if ( get_field('product_video_placeholder') )
-      <div class="product-hero-video">
-        @php $video_photo_id = get_field('product_video_placeholder') @endphp
-        @php $video_photo = wp_get_attachment_image_src( $video_photo_id, 'full' ) @endphp
-        @php $video_photo_alt = get_post_meta($video_photo_id, '_wp_attachment_image_alt', true) @endphp
-        <img class="product-image" src="@php echo $video_photo[0] @endphp" alt="@php echo $video_photo_alt @endphp">
-        <a href="#" class="video-trigger" data-bs-toggle="modal" data-bs-target="#product-video">
-          <img class="product-play-btn" src="@asset('images/icon-video-play-btn-white.svg')" alt="play button" width="73" height="71">
-        </a>
-      </div>
-
-      <!-- Modal -->
-      <div class="modal fade video-modal" id="product-video" tabindex="-1" aria-labelledby="productVideoLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="ratio ratio-16x9">
-                <iframe data-src="https://www.youtube.com/embed/{{ the_field('product_video_id') }}" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    @endif --}}
-  </section>
-
-{{-- <section id="single-product-menu">
-  <div class="container">
-    <div class="single-menu-links">
-      <ul>
-        @if ( get_field('product_overview_paragraph') )
-          <li><a href="#single-product-overview" class="single-menu-link">Overview</a></li>
-        @endif
-        @if ( get_field('product_features_list') )
-          <li><a href="#single-product-features" class="single-menu-link">Features</a></li>
-        @endif
-        @if ( get_field('color_configurator_content') )
-          <li><a href="#single-product-colors" class="single-menu-link">Colors</a></li>
-        @endif
-        @if ( get_field('product_information_list') )
-          <li><a href="#single-product-info" class="single-menu-link">Info</a></li>
-        @endif
-        @if ( get_field('product_downloads_buttons') )
-          <li><a href="#single-product-downloads" class="single-menu-link">Downloads</a></li>
-        @endif
-        @if ( get_field('product_faqs_list') )
-          <li><a href="#product-faqs" class="single-menu-link">FAQ's</a></li>
-        @endif
-        @if ( get_field('product_accessories_list') )
-          <li><a href="#single-product-accessories" class="single-menu-link">Accessories</a></li>
-        @endif
-        @if ( get_field('similar_products') )
-          <li><a href="#single-similar-products" class="single-menu-link">Additional</a></li>
-        @endif
-      </ul>
+<section id="single-product-hero">
+  @if ( get_field('product_hero_photo') )
+    <div class="product-hero-photo">
+      @php $product_photo_id = get_field('product_hero_photo') @endphp
+      @php $product_photo = wp_get_attachment_image_src( $product_photo_id, 'full' ) @endphp
+      @php $product_photo_alt = get_post_meta($product_photo_id, '_wp_attachment_image_alt', true) @endphp
+      <img class="product-image" src="@php echo $product_photo[0] @endphp" alt="@php echo $product_photo_alt @endphp">
     </div>
-  </div>
-</section> --}}
+  @endif
+</section>
 
 @php $prod_cats = get_the_terms( $post->ID , 'product-category' ) @endphp
 @if ( $prod_cats )

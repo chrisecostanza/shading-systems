@@ -3,7 +3,7 @@
 @if ( get_field('single_project_gallery') )
   <section id="single-project-gallery">
     <div class="container">
-      <h2>Project Gallery</h2>
+      <h2>Gallery</h2>
       @php $project_gallery = get_field('single_project_gallery') @endphp
       @if( $project_gallery )
         <div class="project-gallery">

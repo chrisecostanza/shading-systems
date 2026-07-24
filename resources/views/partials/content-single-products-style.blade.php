@@ -18,12 +18,53 @@
   <div class="container">
     <div class="product-style-hero-grid">
       <div class="product-style-hero-left">
-        @if ( get_field('product_style_photo') )
-          <div class="product-style-hero-photo">
-            @php $product_photo_id = get_field('product_style_photo') @endphp
-            @php $product_photo = wp_get_attachment_image_src( $product_photo_id, 'full' ) @endphp
-            @php $product_photo_alt = get_post_meta($product_photo_id, '_wp_attachment_image_alt', true) @endphp
-            <img src="@php echo $product_photo[0] @endphp" alt="@php echo $product_photo_alt @endphp">
+        @php
+          $version_photo_ids = array();
+          $style_parent = get_field('product_style_parent');
+          $style_parent_id = $style_parent ? $style_parent->ID : null;
+
+          if ( $style_parent_id && have_rows('product_model_details', $style_parent_id) ) {
+            while ( have_rows('product_model_details', $style_parent_id) ) {
+              the_row();
+
+              if ( have_rows('product_version_details') ) {
+                while ( have_rows('product_version_details') ) {
+                  the_row();
+                  $learn_more = get_sub_field('version_learn_more_btn');
+
+                  if ( $learn_more && (int) $learn_more->ID === (int) get_the_ID() ) {
+                    if ( have_rows('version_content_photos') ) {
+                      while ( have_rows('version_content_photos') ) {
+                        the_row();
+                        $photo_id = get_sub_field('version_content_photo');
+
+                        if ( $photo_id ) {
+                          $version_photo_ids[] = (int) $photo_id;
+                        }
+                      }
+                    }
+
+                    break 2;
+                  }
+                }
+              }
+            }
+          }
+        @endphp
+
+        @if ( ! empty($version_photo_ids) )
+          <div class="product-style-hero-photo-list">
+            <div class="version-content-slider">
+            @foreach ( array_unique($version_photo_ids) as $version_photo_id )
+              @php $version_photo = wp_get_attachment_image_src( $version_photo_id, 'full' ) @endphp
+              @php $version_photo_alt = get_post_meta($version_photo_id, '_wp_attachment_image_alt', true) @endphp
+              @if ( $version_photo )
+                <div class="product-style-hero-photo">
+                  <img src="@php echo $version_photo[0] @endphp" alt="@php echo $version_photo_alt @endphp">
+                </div>
+              @endif
+            @endforeach
+            </div>
           </div>
         @endif
       </div>
@@ -40,6 +81,51 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="product-style-featured-elements">
+  <div class="container">
+    <h2>{{ the_field('product_style_featured_h2') }}</h2>
+    @php if ( have_rows('product_style_featured_card') ) : @endphp
+      <div class="product-style-card-grid">
+      @php while ( have_rows('product_style_featured_card') ) : the_row() @endphp
+        <div class="product-style-card">
+          @php $featured_photo_id = get_sub_field('product_style_featured_card_photo') @endphp
+          @php $featured_photo_src = wp_get_attachment_image_src( $featured_photo_id, 'full' ) @endphp
+          @php $featured_photo_alt = get_post_meta($featured_photo_id, '_wp_attachment_image_alt', true) @endphp
+          <img src="@php echo $featured_photo_src[0] @endphp" alt="@php echo $featured_photo_alt @endphp">
+          <h3>{{ the_sub_field('product_style_featured_card_title') }}</h3>
+          <div>{{ the_sub_field('product_style_featured_card_text') }}</div>
+        </div>
+      @php endwhile @endphp
+      </div>
+    @php endif @endphp
+  </div>
+</section>
+
+<section id="product-style-video">
+  <div class="container">
+    <h2>{{ the_field('product_style_video_h2') }}</h2>
+    @if ( get_field('product_style_video_vimeo_id') )
+      <div class="vimeo-container">
+        <iframe 
+          src="https://player.vimeo.com/video/{{ the_field('product_style_video_vimeo_id') }}?autoplay=0&muted=1" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    @else
+      @php $style_photo_id = get_field('product_style_video_photo') @endphp
+      @php $style_photo_src = wp_get_attachment_image_src( $style_photo_id, 'full' ) @endphp
+      @php $style_photo_alt = get_post_meta($style_photo_id, '_wp_attachment_image_alt', true) @endphp
+      <img src="@php echo $style_photo_src[0] @endphp" alt="@php echo $style_photo_alt @endphp">
+    @endif
+
+    @if ( get_field('product_style_video_description') )
+      <div class="style-description">{{ the_field('product_style_video_description') }}</div>
+    @endif
   </div>
 </section>
 
@@ -237,6 +323,32 @@
       @php endwhile @endphp
       </div>
     @php endif @endphp
+  </div>
+</section>
+
+<section id="product-style-faqs">
+  <div class="container">
+    @if ( have_rows('product_style_faq_list') )
+      <h2>Frequently Asked Questions</h2>
+      <div class="style-faq-list">
+      @php while ( have_rows('product_style_faq_list') ) : the_row() @endphp
+        <div class="faq-item">
+          <div class="faq-content">
+            <div class="faq-question accordion-trigger">
+              <h3 class="accordion">{{ the_sub_field('product_style_faq_question') }}</h3>
+            </div>
+            <div class="faq-panel hidden">
+              {{ the_sub_field('product_style_faq_answer') }}
+            </div>
+          </div>
+          <div class="faq-screw-head accordion-trigger">
+            <img class="faq-plus" src="@asset('images/icon-faq-blue-arrow.svg')" alt="down arrow" width="22" height="10">
+            <img class="faq-minus hidden" src="@asset('images/icon-faq-blue-arrow.svg')" alt="up arrow" width="22" height="10">
+          </div>
+        </div>
+      @php endwhile @endphp
+      </div>
+    @endif
   </div>
 </section>
 
